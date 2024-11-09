@@ -15,6 +15,8 @@ CONFIG_FILE = "config.json"
 RESULTS_FILE = "results.json"
 FILES_FOLDER = "files"
 INFO_DIRECTORY = "infofiles"
+CONRESULTS_FILE = "conresults.json"
+
 
 
 # Загрузка конфигурации задач
@@ -34,6 +36,16 @@ def load_results():
             return json.load(file)
     return {}
 
+
+def save_conresults(results):
+    with open(CONRESULTS_FILE, "w", encoding="utf-8") as file:
+        json.dump(results, file, indent=4, ensure_ascii=False)
+
+def load_conresults():
+    if os.path.exists(CONRESULTS_FILE):
+        with open(CONRESULTS_FILE, "r", encoding="utf-8") as file:
+            return json.load(file)
+    return {}
 
 # Выполнение пользовательского кода
 def execute_code(user_code):
@@ -373,6 +385,183 @@ def render_info_file(filename):
 
     except Exception as e:
         return f"<h1>Ошибка при обработке файла {filename}: {str(e)}</h1>"
+
+
+
+@app.route("/con", methods=["GET", "POST"])
+def con():
+    config = load_config()
+    tasks = config["contask"]
+    result_message = None
+    execution_output = None
+    task_description = None
+    name = None
+    task_id = None
+    code = None
+    global last_request_time
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        task_id = request.form.get("task")
+        code = request.form.get("code")
+        user_ip = request.remote_addr
+        current_time = time.time()
+
+
+
+
+
+        if task_id not in tasks:
+            result_message = "Неверный номер задачи."
+        else:
+            task = tasks[task_id]
+            task_description = task["description"]
+
+            # Проверка времени последнего запроса
+            if user_ip in last_request_time:
+                time_since_last_request = current_time - last_request_time[user_ip]
+                if time_since_last_request < 5:
+                    result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
+                    print(2)
+                    return render_con_page(tasks, result_message, execution_output, task_description, name)
+
+                # Обновляем время последнего запроса
+            last_request_time[user_ip] = current_time
+
+            # Выполняем код
+            execution_result = execute_code(code)
+            if "error" in execution_result:
+                result_message = execution_result["error"]
+                execution_output = execution_result["error"]
+            elif execution_result["stderr"]:
+                result_message = "Ошибка в коде."
+                execution_output = execution_result["stderr"]
+            else:
+                result_message = "Задача отправлена!"
+                execution_output = execution_result["stdout"]
+
+                # Сохраняем результат в JSON
+                results = load_conresults()
+                if task_id not in results:
+                    results[task_id] = []
+
+                # Обновляем данные (сохраняем последнее решение)
+                results[task_id].append({
+                    "name": name,
+                    "ip": user_ip,
+                    "code": code,
+                    "output": execution_output,
+                    "timestamp": datetime.now().isoformat()
+                })
+                print(1)
+
+                # Оставляем только последнее решение
+                results[task_id] = results[task_id][-1:]
+
+                save_conresults(results)
+
+    return render_con_page(tasks, result_message, execution_output, task_description, name)
+
+@app.route("/conresult", methods=["GET"])
+def conresult():
+    results = load_conresults()
+
+    # Строим таблицы для каждой задачи
+    tables = {}
+    for task_id, submissions in results.items():
+        rows = [
+            {
+                "name": sub["name"],
+                "code": sub["code"],
+                "output": sub["output"],
+                "ip": sub["ip"],
+                "timestamp": sub["timestamp"]
+            }
+            for sub in submissions
+        ]
+        tables[task_id] = rows
+
+    return render_template_string("""
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Результаты самостоятельных задач</title>
+    </head>
+    <body>
+        <h1>Результаты самостоятельных задач</h1>
+        {% for task_id, rows in tables.items() %}
+            <h2>Задача {{ task_id }}</h2>
+            <table border="1">
+                <tr>
+                    <th>Имя пользователя</th>
+                    <th>Код</th>
+                    <th>Вывод</th>
+                    <th>Время </th>
+                    <th>ip</th>
+                </tr>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row['name'] }}</td>
+                    <td><pre>{{ row['code'] }}</pre></td>
+                    <td>{{ row['output'] }}</td>
+                    <td>{{ row['timestamp'] }}</td>
+                    <td>{{ row['ip'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+        <a href="/">Вернуться на главную</a>
+    </body>
+    </html>
+    """, tables=tables)
+
+def render_con_page(tasks, result_message, execution_output, task_description, name):
+    """Функция для рендера страницы самостоятельных заданий"""
+    return render_template_string("""
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Самостоятельные задачи</title>
+    </head>
+    <body>
+        <h1>Самостоятельные задачи</h1>
+        <form method="POST" action="/con">
+            <label>Имя ученика:</label><br>
+            <input type="text" name="name" value="{{ name or '' }}" required><br><br>
+
+            <label>Выберите номер задачи:</label><br>
+            <select name="task" required onchange="this.form.submit()">
+                <option value="" disabled selected>Выберите задачу</option>
+                {% for task_id, task in tasks.items() %}
+                    <option value="{{ task_id }}" {% if task_id == request.form.get('task') %}selected{% endif %}>Задача {{ task_id }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            {% if task_description %}
+            <h3>Условие задачи:</h3>
+            <p>{{ task_description }}</p>
+            {% endif %}
+
+            <label>Введите ваш код:</label><br>
+            <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
+
+            <button type="submit">Отправить</button>
+        </form>
+
+        {% if result_message %}
+        <h2>Результат:</h2>
+        <p>{{ result_message }}</p>
+        {% if execution_output %}
+        <h3>Вывод программы:</h3>
+        <pre>{{ execution_output }}</pre>
+        {% endif %}
+        {% endif %}
+    </body>
+    </html>
+    """, tasks=tasks, result_message=result_message, execution_output=execution_output,
+                                  task_description=task_description, name=name)
 
 
 if __name__ == "__main__":

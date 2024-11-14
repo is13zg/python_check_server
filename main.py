@@ -18,7 +18,6 @@ INFO_DIRECTORY = "infofiles"
 CONRESULTS_FILE = "conresults.json"
 
 
-
 # Загрузка конфигурации задач
 def load_config():
     with open(CONFIG_FILE, "r", encoding="utf-8") as file:
@@ -41,16 +40,19 @@ def save_conresults(results):
     with open(CONRESULTS_FILE, "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
 
+
 def load_conresults():
     if os.path.exists(CONRESULTS_FILE):
         with open(CONRESULTS_FILE, "r", encoding="utf-8") as file:
             return json.load(file)
     return {}
 
+
 def is_local_request():
     """Проверяет, что запрос поступил с локального компьютера."""
     user_ip = request.remote_addr
     return user_ip in ["127.0.0.1", "::1"]
+
 
 # Выполнение пользовательского кода
 def execute_code(user_code):
@@ -72,53 +74,6 @@ def execute_code(user_code):
     except Exception as e:
         return {"error": str(e)}
 
-
-def render_page0(tasks, result_message, execution_output, task_description, name):
-    """Функция для рендера страницы"""
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Python Code Checker</title>
-    </head>
-    <body>
-        <h1>Python Code Checker</h1>
-        <form method="POST" action="/">
-            <label>Имя ученика:</label><br>
-            <input type="text" name="name" value="{{ name or '' }}" required><br><br>
-
-            <label>Выберите номер задачи:</label><br>
-            <select name="task" required onchange="this.form.submit()">
-                <option value="" disabled selected>Выберите задачу</option>
-                {% for task_id, task in tasks.items() %}
-                    <option value="{{ task_id }}" {% if task_id == request.form.get('task') %}selected{% endif %}>Задача {{ task_id }}</option>
-                {% endfor %}
-            </select><br><br>
-
-            {% if task_description %}
-            <h3>Условие задачи:</h3>
-            <p>{{ task_description }}</p>
-            {% endif %}
-
-            <label>Введите ваш код:</label><br>
-            <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
-
-            <button type="submit">Отправить</button>
-        </form>
-
-        {% if result_message %}
-        <h2>Результат:</h2>
-        <p>{{ result_message }}</p>
-        {% if execution_output %}
-        <h3>Вывод программы:</h3>
-        <pre>{{ execution_output }}</pre>
-        {% endif %}
-        {% endif %}
-    </body>
-    </html>
-    """, tasks=tasks, result_message=result_message, execution_output=execution_output,
-                                  task_description=task_description, name=name)
 
 def render_page2(topics, result_message, execution_output, task_description, name, selected_topic, selected_task):
     """Функция для рендера страницы"""
@@ -160,8 +115,11 @@ def render_page2(topics, result_message, execution_output, task_description, nam
 
             <label>Введите ваш код:</label><br>
             <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
-
-            <button type="submit">Отправить</button>
+            
+            <!-- Скрытое поле для проверки, была ли нажата кнопка -->
+            <input type="hidden" name="submit_action" value="">
+            
+            <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'" >Отправить</button>
         </form>
 
         {% if result_message %}
@@ -177,6 +135,8 @@ def render_page2(topics, result_message, execution_output, task_description, nam
     """, topics=topics, result_message=result_message, execution_output=execution_output,
                                   task_description=task_description, name=name,
                                   selected_topic=selected_topic, selected_task=selected_task)
+
+
 # Главная страница
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -190,22 +150,21 @@ def index():
     selected_topic = None
     selected_task = None
     code = None
+    submit_action = None
     global last_request_time
-
 
     if request.method == "POST":
         name = request.form.get("name")
         selected_topic = request.form.get("topic")
         selected_task = request.form.get("task")
         code = request.form.get("code")
+        submit_action = request.form.get("submit_action")
         user_ip = request.remote_addr
         current_time = time.time()
-
+        print(request.form)
 
         if selected_topic and selected_topic in topics:
             topic_tasks = topics[selected_topic]
-
-
 
         if selected_topic not in topics or selected_task not in topic_tasks:
             result_message = "Неверный номер задачи."
@@ -214,19 +173,17 @@ def index():
             task_description = task["description"]
             expected_output = task["expected_output"]
 
-            if not code:
-                return render_page2(topics, result_message, execution_output, task_description, name, selected_topic, selected_task)
+            if not code or submit_action != 'submit_code':
+                return render_page2(topics, result_message, execution_output, task_description, name, selected_topic,
+                                    selected_task)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
                 time_since_last_request = current_time - last_request_time[user_ip]
                 if time_since_last_request < 5:
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    print(execution_output)
                     return render_page2(topics, result_message, execution_output, task_description, name,
                                         selected_topic, selected_task)
-
-
 
             # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
@@ -238,7 +195,7 @@ def index():
                 result_message = "Ошибка в коде."
                 execution_output = execution_result["stderr"]
             else:
-                if execution_result["stdout"] == expected_output+"\n":
+                if execution_result["stdout"] == expected_output + "\n":
                     result_message = "Ваш код верный!"
                     status = "Успех"
                 else:
@@ -259,7 +216,7 @@ def index():
                     "code": code,
                     "result": status,
                     "timestamp": datetime.now().isoformat(),
-                    "ip":user_ip
+                    "ip": user_ip
                 })
 
                 save_results(results)
@@ -267,10 +224,8 @@ def index():
     return render_page2(topics, result_message, execution_output, task_description, name, selected_topic, selected_task)
 
 
-
 @app.route("/res", methods=["GET"])
 def results():
-
     if not is_local_request():
         abort(403)  # Доступ запрещён
 
@@ -308,6 +263,7 @@ def results():
     </html>
     """, results=results)
 
+
 # Страница со списком файлов
 @app.route("/files", methods=["GET"])
 def list_files():
@@ -334,6 +290,7 @@ def list_files():
     </html>
     """, files=files)
 
+
 @app.route("/res/<name>", methods=["GET"])
 def student_results(name):
     results = load_results()
@@ -354,6 +311,9 @@ def student_results(name):
         """, name=name)
 
     student_data = results[name]
+    # Сортируем историю по времени в обратном порядке
+    sorted_history = sorted(student_data["history"], key=lambda x: x["timestamp"], reverse=True)
+
     return render_template_string("""
     <!doctype html>
     <html lang="en">
@@ -378,7 +338,7 @@ def student_results(name):
                 <th>Время</th>
                 <th>ip</th>
             </tr>
-            {% for attempt in student_data['history'] %}
+            {% for attempt in sorted_history  %}
                 <tr>
                     <td>{{ attempt['topic']+" "+ attempt['task_id'] }}</td>
                     <td><pre>{{ attempt['code'] }}</pre></td>
@@ -391,13 +351,14 @@ def student_results(name):
         <a href="/res">Вернуться к общим результатам</a>
     </body>
     </html>
-    """, name=name, student_data=student_data)
+    """, name=name, student_data=student_data, sorted_history=sorted_history)
 
 
 # Скачивание файлов
 @app.route("/download/<filename>", methods=["GET"])
 def download_file(filename):
     return send_from_directory(FILES_FOLDER, filename, as_attachment=True)
+
 
 @app.route("/info", methods=["GET"])
 def info():
@@ -430,6 +391,7 @@ def info():
 
     except Exception as e:
         return f"<h1>Ошибка при обработке файлов: {str(e)}</h1>"
+
 
 @app.route("/info/<filename>", methods=["GET"])
 def render_info_file(filename):
@@ -470,7 +432,6 @@ def render_info_file(filename):
         return f"<h1>Ошибка при обработке файла {filename}: {str(e)}</h1>"
 
 
-
 @app.route("/con", methods=["GET", "POST"])
 def con():
     config = load_config()
@@ -481,24 +442,25 @@ def con():
     name = None
     task_id = None
     code = None
+    submit_action = None
     global last_request_time
 
     if request.method == "POST":
         name = request.form.get("name")
         task_id = request.form.get("task")
         code = request.form.get("code")
+        submit_action = request.form.get("submit_action")
         user_ip = request.remote_addr
         current_time = time.time()
-
-
-
-
 
         if task_id not in tasks:
             result_message = "Неверный номер задачи."
         else:
             task = tasks[task_id]
             task_description = task["description"]
+
+            if not code or submit_action != 'submit_code':
+                return render_con_page(tasks, result_message, execution_output, task_description, name)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
@@ -507,8 +469,7 @@ def con():
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
                     return render_con_page(tasks, result_message, execution_output, task_description, name)
 
-                if not code:
-                    return render_con_page(tasks, result_message, execution_output, task_description, name)
+
 
                 # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
@@ -539,14 +500,13 @@ def con():
                     "timestamp": datetime.now().isoformat()
                 })
 
-
                 save_conresults(results)
 
     return render_con_page(tasks, result_message, execution_output, task_description, name)
 
+
 @app.route("/conres", methods=["GET"])
 def conresult():
-
     if not is_local_request():
         abort(403)  # Доступ запрещён
 
@@ -632,7 +592,10 @@ def render_con_page(tasks, result_message, execution_output, task_description, n
             <label>Введите ваш код:</label><br>
             <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
 
-            <button type="submit">Отправить</button>
+             <!-- Скрытое поле для проверки, была ли нажата кнопка -->
+            <input type="hidden" name="submit_action" value="">
+            
+            <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'" >Отправить</button>
         </form>
 
         {% if result_message %}

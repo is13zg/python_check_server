@@ -6,8 +6,8 @@ from datetime import datetime
 import time
 import nbformat
 from nbconvert import HTMLExporter
-from werkzeug.utils import secure_filename
-import argparse
+import signal
+import threading
 
 app = Flask(__name__)
 last_request_time = {}
@@ -18,7 +18,9 @@ RESULTS_FILE = "results.json"
 FILES_FOLDER = "files"
 INFO_DIRECTORY = "infofiles"
 CONRESULTS_FILE = "conresults.json"
-NO_CON = False
+
+WORK_TIME = True
+CON_TIME = False
 
 
 # Загрузка конфигурации задач
@@ -56,7 +58,19 @@ def is_local_request():
     user_ip = request.remote_addr
     return user_ip in ["127.0.0.1", "::1"]
 
+def is_con_time():
+    global CON_TIME
+    return CON_TIME
 
+def is_work_time():
+    global WORK_TIME
+    return WORK_TIME
+
+
+def stop_flask():
+    """Функция для остановки Flask-сервера."""
+    print("Остановка сервера Flask...")
+    os.kill(os.getpid(), signal.SIGINT)
 # Выполнение пользовательского кода
 def execute_code(user_code):
     try:
@@ -145,6 +159,7 @@ def render_page2(topics, result_message, execution_output, task_description, nam
 def index():
     config = load_config()
     topics = config["tasks"]
+    names = config["names"]
     topic_tasks = None
     result_message = None
     execution_output = None
@@ -155,6 +170,12 @@ def index():
     code = None
     submit_action = None
     global last_request_time
+
+    if not is_work_time() and not is_local_request():
+        abort(403)
+
+
+
 
     if request.method == "POST":
         name = request.form.get("name")
@@ -178,6 +199,10 @@ def index():
             if not code or submit_action != 'submit_code':
                 return render_page2(topics, result_message, execution_output, task_description, name, selected_topic,
                                     selected_task)
+            if name not in names:
+                result_message = "Введите свое имя, пример: Вася"
+                return render_page2(topics, result_message, execution_output, task_description, name, selected_topic,
+                                    selected_task)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
@@ -199,10 +224,10 @@ def index():
             else:
                 if execution_result["stdout"] == expected_output + "\n":
                     result_message = "Ваш код верный!"
-                    status = "Успех"
+                    status = "✅"
                 else:
                     result_message = "Ваш код неверный."
-                    status = "Неудача"
+                    status = "❌"
                 execution_output = execution_result["stdout"]
 
                 # Сохраняем результат в JSON
@@ -259,6 +284,52 @@ def results():
                      <td>{{ data['ip'] }}</td>
                 </tr>
             {% endfor %}
+        </table>
+        <a href="/">Вернуться на главную</a>
+    </body>
+    </html>
+    """, results=results)
+
+
+@app.route("/res2", methods=["GET"])
+def results2():
+    if not is_local_request():
+        abort(403)  # Доступ запрещён
+
+    results = load_results()
+    return render_template_string("""
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Результаты</title>
+    </head>
+    <body>
+        <h1>Результаты учеников</h1>
+        <table border="1">
+            <tr>
+                {% for name, data in results.items() %}
+                    <td>
+                        <a href="/res/{{ name }}">{{ name }}</a>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for name, data in results.items() %}
+                    <td>
+                        {% for task_id, status in data['tasks'].items() %}
+                            Зад. {{ task_id }}: {{ status }}<br>
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for name, data in results.items() %}
+                    <td>
+                        {{ data['ip'] }}
+                    </td>
+                {% endfor %}
+            </tr>
         </table>
         <a href="/">Вернуться на главную</a>
     </body>
@@ -364,6 +435,8 @@ def download_file(filename):
 
 @app.route("/info", methods=["GET"])
 def info():
+    if not is_work_time() and not is_local_request():
+        abort(403)
     try:
         # Ищем все файлы, начинающиеся с "info" и заканчивающиеся на ".ipynb"
         info_files = [f for f in os.listdir(INFO_DIRECTORY) if f.startswith("info") and f.endswith(".ipynb")]
@@ -395,10 +468,10 @@ def info():
         return f"<h1>Ошибка при обработке файлов: {str(e)}</h1>"
 
 
-
-
 @app.route("/info/<filename>", methods=["GET"])
 def render_info_file(filename):
+    if not is_work_time() and not is_local_request():
+        abort(403)
     try:
         filepath = os.path.join(INFO_DIRECTORY, filename)
 
@@ -445,10 +518,11 @@ def render_info_file(filename):
 
 @app.route("/con", methods=["GET", "POST"])
 def con():
-    if NO_CON:
-        return
+    if not is_con_time() and not is_local_request():
+        abort(403)
     config = load_config()
     tasks = config["contask"]
+    names = config["names"]
     result_message = None
     execution_output = None
     task_description = None
@@ -475,18 +549,19 @@ def con():
             if "image" in task:
                 task_img = task["image"]
 
-
             if not code or submit_action != 'submit_code':
-                return render_con_page(tasks, result_message, execution_output, task_description, task_img,  name)
+                return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
+
+            if name not in names:
+                result_message = "Введите свое имя, пример: Вася"
+                return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
                 time_since_last_request = current_time - last_request_time[user_ip]
                 if time_since_last_request < 5:
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    return render_con_page(tasks, result_message, execution_output, task_description, task_img,  name)
-
-
+                    return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
 
                 # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
@@ -540,7 +615,25 @@ def conresult():
         # Преобразуем обратно в список для рендера
         latest_submissions[task_id] = list(latest_by_user.values())
 
+    # Определяем время самой последней сдачи для каждой задачи
+    latest_task_timestamps = {
+        task_id: max(row["timestamp"] for row in rows)
+        for task_id, rows in latest_submissions.items()
+    }
+
+    # Сортируем задачи по времени последней сдачи в порядке убывания
+    sorted_task_ids = sorted(
+        latest_task_timestamps.keys(),
+        key=lambda task_id: latest_task_timestamps[task_id],
+        reverse=True
+    )
+
     # Строим таблицы для каждой задачи
+    sorted_latest_submissions = {
+        task_id: latest_submissions[task_id]
+        for task_id in sorted_task_ids
+    }
+
     return render_template_string("""
     <!doctype html>
     <html lang="en">
@@ -550,7 +643,7 @@ def conresult():
     </head>
     <body>
         <h1>Результаты самостоятельных задач</h1>
-        {% for task_id, rows in latest_submissions.items() %}
+        {% for task_id, rows in sorted_latest_submissions.items() %}
             <h2>Задача {{ task_id }}</h2>
             <table border="1">
                 <tr>
@@ -574,10 +667,10 @@ def conresult():
         <a href="/">Вернуться на главную</a>
     </body>
     </html>
-    """, latest_submissions=latest_submissions)
+    """, sorted_latest_submissions=sorted_latest_submissions)
 
 
-def render_con_page(tasks, result_message, execution_output, task_description,task_img, name):
+def render_con_page(tasks, result_message, execution_output, task_description, task_img, name):
     """Функция для рендера страницы самостоятельных заданий"""
     return render_template_string("""
     <!doctype html>
@@ -632,28 +725,49 @@ def render_con_page(tasks, result_message, execution_output, task_description,ta
                                   task_description=task_description, task_img=task_img, name=name)
 
 
-if __name__ == "__main__":
+def flask_thread():
+    """Функция для запуска Flask-сервера в отдельном потоке."""
     while True:
-        parser = argparse.ArgumentParser(description="Flask server with CLI flag")
-        parser.add_argument(
-            "-nocon",
-            action="store_true",  # Указывает, что флаг является логическим
-            help="Set NO_CON to True"
-        )
-        args = parser.parse_args()
-        NO_CON = args.nocon
-
         try:
             app.run(host="0.0.0.0", port=5000)
-        except KeyboardInterrupt:
-            print("Программа завершена пользователем (Ctrl+C).")
-            break  # Выход из цикла
 
         except Exception as e:
             print(e)
             print(f"Ошибка сервера: {e}. Перезапуск через 2 секунд...")
             time.sleep(2)
 
-        except KeyboardInterrupt:
-            print("Программа завершена пользователем (Ctrl+C).")
-            break  # Выход из цикла
+
+def command_listener():
+    """Функция для обработки пользовательских команд."""
+    global WORK_TIME, CON_TIME
+    print("Введите команды: 'all', 'work', 'con'. Для выхода используйте 'exit'.")
+    while True:
+        command = input("Введите команду: ").strip().lower()
+        if command == "all":
+            WORK_TIME = True
+            CON_TIME = True
+            print("Режим ALL: WORK_TIME = True, CON_TIME = True")
+        elif command == "work":
+            WORK_TIME = True
+            CON_TIME = False
+            print("Режим WORK: WORK_TIME = True, CON_TIME = False")
+        elif command == "con":
+            WORK_TIME = False
+            CON_TIME = True
+            print("Режим CON: WORK_TIME = False, CON_TIME = True")
+        elif command == "exit":
+            print("Выход из программы...")
+            stop_flask()
+            break
+        else:
+            print("Неизвестная команда. Попробуйте 'all', 'work', 'con' или 'exit'.")
+
+if __name__ == "__main__":
+    # Запуск Flask-сервера в отдельном потоке
+    server_thread = threading.Thread(target=flask_thread, daemon=True)
+    server_thread.start()
+
+    # Запуск обработки команд в основном потоке
+    command_listener()
+    print("Режим ALL: WORK_TIME = True, CON_TIME = True")
+

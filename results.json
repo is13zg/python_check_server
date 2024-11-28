@@ -1,115 +1,2993 @@
 {
-    "1": {
+    "Карим": {
         "tasks": {
-            "1 Алгебра": "Неудача",
-            "2 Алгебра": "Неудача",
-            "2 Геометрия": "Неудача",
-            "1 Геометрия": "Неудача",
-            "1 №14": "Неудача"
+            "9 №14": "✅",
+            "10 №14": "✅",
+            "11 №14": "✅",
+            "12 №14": "✅",
+            "13 №14": "✅",
+            "14 №14": "✅",
+            "2 №2": "✅",
+            "2 №15": "✅",
+            "3 №15": "✅",
+            "4 №15": "✅",
+            "5 №15": "✅",
+            "6 №15": "✅",
+            "7 №15": "✅",
+            "8 №15": "✅",
+            "9 №15": "✅",
+            "12 №15": "✅",
+            "12.1 №15": "✅",
+            "13 №15": "✅",
+            "14 №15": "✅",
+            "14.2 №15": "✅",
+            "15 №15": "✅",
+            "16 №15": "✅",
+            "2 №13": "✅",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "7 №13": "✅",
+            "8 №13": "✅",
+            "1 №2": "✅"
         },
         "history": [
             {
-                "topic": "Алгебра",
-                "task_id": "1",
-                "code": "1",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:02:11.779713",
-                "ip": "127.0.0.1"
-            },
-            {
-                "topic": "Алгебра",
-                "task_id": "1",
-                "code": "1",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:02:18.669820",
-                "ip": "127.0.0.1"
-            },
-            {
-                "topic": "Алгебра",
-                "task_id": "2",
-                "code": "1",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:03:19.051699",
-                "ip": "127.0.0.1"
-            },
-            {
-                "topic": "Геометрия",
-                "task_id": "2",
-                "code": "1",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:03:26.303003",
-                "ip": "127.0.0.1"
-            },
-            {
-                "topic": "Геометрия",
-                "task_id": "1",
-                "code": "1",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:03:41.474945",
-                "ip": "127.0.0.1"
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 27 == 0:\r\n            print(a//57)",
+                "result": "❌",
+                "timestamp": "2024-11-14T11:23:20.565190",
+                "ip": "192.168.137.111"
             },
             {
                 "topic": "№14",
-                "task_id": "1",
-                "code": "print(48)",
-                "result": "Успех",
-                "timestamp": "2024-11-11T23:22:21.486823",
-                "ip": "127.0.0.1"
+                "task_id": "9",
+                "code": "mn = 10000\r\nspsk  = []\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            spsk.append(a//57)\r\nprint(min(spsk))",
+                "result": "❌",
+                "timestamp": "2024-11-14T11:26:10.492880",
+                "ip": "192.168.137.111"
             },
             {
                 "topic": "№14",
-                "task_id": "1",
-                "code": "print(47)",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:22:26.842796",
-                "ip": "127.0.0.1"
-            }
-        ],
-        "ip": "127.0.0.1"
-    },
-    "2": {
-        "tasks": {
-            "1 Геометрия": "Неудача"
-        },
-        "history": [
+                "task_id": "9",
+                "code": "mn = 1000000\r\nspsk  = []\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            spsk.append(a//57)\r\nprint(min(spsk))",
+                "result": "❌",
+                "timestamp": "2024-11-14T11:26:40.530673",
+                "ip": "192.168.137.111"
+            },
             {
-                "topic": "Геометрия",
-                "task_id": "1",
-                "code": "print(1)",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:06:07.554972",
-                "ip": "127.0.0.1"
-            }
-        ],
-        "ip": "127.0.0.1"
-    },
-    "123": {
-        "tasks": {
-            "7 №142": "Неудача"
-        },
-        "history": [
+                "topic": "№14",
+                "task_id": "9",
+                "code": "mn = 1000000\r\nspsk  = []\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            spsk.append(a//57)\r\n            mn = x+y\r\nprint(min(spsk))",
+                "result": "❌",
+                "timestamp": "2024-11-14T11:27:51.383322",
+                "ip": "192.168.137.111"
+            },
             {
-                "topic": "№142",
+                "topic": "№14",
+                "task_id": "9",
+                "code": "mn = 1000000\r\nspsk  = []\r\ncnt = -1\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            spsk.append(a//57)\r\n            mn = x+y\r\n            cnt += 1\r\nprint(spsk[cnt])",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:05:11.457346",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "mn = 1000000\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            print(a//57)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:06:21.521416",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "mn = 1000000\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22 **3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            print(a//57)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:07:32.932970",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "mn = 1000000\r\nfor x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22**3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+y*13**2+9*13+y)\r\n        if a % 57 == 0 and mn > x+y:\r\n            print(a//57)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:08:33.909112",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22**3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+y*13**2+9*13+y)\r\n        if a % 57 == 0:\r\n            print(a//57)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:08:56.089856",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1, 22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22**3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+y*13**2+9*13+y)\r\n        if a % 57 == 0:\r\n            print(a//57)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:09:02.661465",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1, 22):\r\n    flag = True\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22**3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+y*13**2+9*13+y)\r\n        if a % 57 == 0:\r\n            print(a//57)\r\n            flag = False\r\n            break\r\n    if not flag:\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:10:25.043217",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for x in range(1, 22):\r\n    flag = True\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22**3 + 3*22**2 +x*22 + 5 - (6*13**4 + 7*13**3+y*13**2+9*13+y)\r\n        if a % 57 == 0:\r\n            print(a//57)\r\n            flag = False\r\n            break\r\n    if not flag:\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:10:44.969427",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for x in range(1, 100):\r\n    a = 1*x**2 + 2*x**1 + 3\r\n    b = 9*(x+2)+3\r\n    if a == b:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:18:57.230107",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range(1, 100):\r\n    a = 1*x**2 + 2*x**1 + 3\r\n    b = 9*(x+2)+3\r\n    if a == b:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:19:06.292680",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range(1, 100):\r\n    a = 2*x**2  + 5\r\n    b = 9*8+5\r\n    c = 1*(x+2)**2+9*(x+2)+6\r\n    if a +b == c:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:20:53.877168",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range(1, 1000):\r\n    a = 2*x**2  + 5\r\n    b = 9*8+5\r\n    c = 1*(x+2)**2+9*(x+2)+6\r\n    if a +b == c:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:21:00.566841",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range(1, 1000):\r\n    a = 2*x**2  + 5\r\n    b = 5*8+5\r\n    c = 1*(x+2)**2+9*(x+2)+6\r\n    if a +b == c:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:21:17.599850",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range(10, 1000):\r\n    a = 2*x**2  + 5\r\n    b = 5*8+5\r\n    c = 1*(x+2)**2+9*(x+2)+6\r\n    if a +b == c:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:22:09.206958",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "for x in range(10, 1000):\r\n    a = 2*x**2  + 5\r\n    b = 5*8+5\r\n    c = 1*(x+2)**2+9*(x+2)+6\r\n    if a +b == c:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:22:21.481181",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "for x in range(1, 1000):\r\n    a = 5*x+6\r\n    b = 4*x+5\r\n    if str(a)[-1] == str(b)[-1]:\r\n        print(x)\r\n        break\r\n    \r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:24:01.152493",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "for x in range(2, 100):\r\n    a = 56\r\n    a1 = []\r\n    while a > 0:\r\n        a1 = [a%x] + a1\r\n        a //= x\r\n    b = 45\r\n    b1 =[]\r\n    while b > 0:\r\n        b1 = [b%x] + b1\r\n        b //= x\r\n    if a1[-1] == b1[-1]:\r\n        print(x)\r\n        break\r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:30:50.405181",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "13",
+                "code": "for x in range(2, 100):\r\n    a = 56\r\n    a1 = []\r\n    while a > 0:\r\n        a1 = [a%x] + a1\r\n        a //= x\r\n    b = 45\r\n    b1 =[]\r\n    while b > 0:\r\n        b1 = [b%x] + b1\r\n        b //= x\r\n    if a1[-1] == b1[-1]:\r\n        print(x)\r\n        break\r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:31:09.680495",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "13",
+                "code": "spsk = []\r\nfor x in range(2, 100):\r\n    a = 338\r\n    a1 = []\r\n    while a > 0:\r\n        a1 = [a%x] + a1\r\n        a //= x\r\n    if len(a1) == 3 and a1[-1] == 2:\r\n        spsk.append(x)\r\nprint(max(spsk))\r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:33:50.233724",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "14",
+                "code": "spsk = []\r\nfor x in range(2, 100):\r\n    a = 338\r\n    a1 = []\r\n    while a > 0:\r\n        a1 = [a%x] + a1\r\n        a //= x\r\n    if len(a1) == 3 and a1[-1] == 2:\r\n        spsk.append(x)\r\nprint(max(spsk))\r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:37:30.180127",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№14",
+                "task_id": "14",
+                "code": "ans = 0\r\nfor x in range(1, 51):\r\n    a = []\r\n    while x > 0:\r\n        a = [x%3] + a\r\n        x//= 3\r\n    if a[-2:] == [2,1]:\r\n        ans += 1\r\nprint(ans)",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:55:19.146269",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "from itertools import *\r\ndef func(w,x,y,z):\r\n    return not(x<=w)or(y<=z)and not y\r\nfor a1,a2,a3,a4,a5,a6,a7 in product([0,1], repeat = 7):\r\n    table = [(a1, 1, a2, 0),(a3, 0,1,a4),(a5,a6,0,a7)]\r\n    for p in permutations('wxyz'):\r\n        if [func(**dict(zip(p, row))) for row in table] == [0,0,0]:\r\n            print(''.join(p))",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:46:12.045101",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "from itertools import *\r\ndef func(w,x,y,z):\r\n    return not(x<=w)or(y<=z) or not y\r\nfor a1,a2,a3,a4,a5,a6,a7 in product([0,1], repeat = 7):\r\n    table = [(a1, 1, a2, 0),(a3, 0,1,a4),(a5,a6,0,a7)]\r\n    for p in permutations('wxyz'):\r\n        if [func(**dict(zip(p, row))) for row in table] == [0,0,0]:\r\n            print(''.join(p))",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:47:08.371089",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def lol(n, m):\r\n    f = ((n % 34 != 0) and (n%51 == 0)) <= ((n % m == 0) or (x % 51))\r\n    return f\r\nfor x in range(1, 1000):\r\n    if all([lol(x, a) for a in range(1, 100000)]):\r\n        print(x)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:19:20.074657",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def lol(x, a):\r\n    f = ((x % 34 != 0) and (x%51 == 0)) <= ((x % a == 0) or (x % 51))\r\n    return f\r\nfor x in range(1, 1000):\r\n    if all([lol(x, a) for a in range(1, 100000)]):\r\n        print(x)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:20:10.433629",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def lol(x, a):\r\n    f = ((x % 34 == 0) and (x%51 != 0)) <= ((x % a != 0) or (x % 51 == 0))\r\n    return f\r\nfor x in range(1, 1000):\r\n    if all([lol(x, a) for a in range(1, 100000)]):\r\n        print(x)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:20:56.578345",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def lol(x, a):\r\n    f = ((x % 34 == 0) and (x%51 != 0)) <= ((x % a != 0) or (x % 51 == 0))\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a) for x in range(1, 100000)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:22:08.036499",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "spsk =[]\r\ndef lol(x, a):\r\n    f = ((x % 36 == 0) and (x % 42 == 0)) <= ((x % a == 0) and (a*(a-25)< 25*(a + 200)))\r\n#for a in range(1, 1000):\r\n    #if all([lol(x, a) for x in range(1, 100000)]):\r\n        #print(a)",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:34:36.364751",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "spsk =[]\r\ndef lol(x, a):\r\n    f = ((x % 36 == 0) and (x % 42 == 0)) <= ((x % a == 0) and (a*(a-25)< 25*(a + 200)))\r\n    return f\r\n#for a in range(1, 1000):\r\n    #if all([lol(x, a) for x in range(1, 100000)]):\r\n        #spsk.append(a)\r\n#print(spsk[-1])\r\nprint(84)",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:03:44.220383",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def lol(x, a):\r\n    f = (x&41 == 0) <= ((x&119 != 0)<=(x&a != 0))\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a) for x in range(1, 100000)]):\r\n            print(a)\r\n            break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:08:58.649986",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def lol(x, a):\r\n    f = (((x&13 != 0) or (x & a == 0)) or(x&13 != 0)) or (x&a != 0) or (x & 39 ==0)\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a) for x in range(1, 100000)]):\r\n            print(a)\r\n            break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:12:51.796496",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def lol(x, a):\r\n    f = (((x&13 != 0) or (x & a == 0)) <= (x&13 != 0)) or (x&a != 0) or (x & 39 ==0)\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a) for x in range(1, 100000)]):\r\n            print(a)\r\n            break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:13:41.071567",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def lol(x, a):\r\n    f = (x&a==0) and (x&41 != 0) and (x&33==0)\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a) for x in range(1, 10000)]):\r\n       print(a)\r\n       break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:17:06.824676",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def lol(x, a):\r\n    f = (x&a==0) and (x&41 != 0) and (x&33==0)\r\n    return f\r\nfor a in range(1, 1000):\r\n    if all([lol(x, a)==0 for x in range(1, 10000)]):\r\n       print(a)\r\n       break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:19:56.616324",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
                 "task_id": "7",
-                "code": "print()",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:18:10.913620",
-                "ip": "127.0.0.1"
+                "code": "spsk = []\r\ndef lol(x, a):\r\n    f = ((x & 17 != 0) <= ((x & a != 0) <= (x&58 !=0))) <= ((x&8==0) and (x&a !=0) and (x&58 ==0))\r\nfor a in range(43, 56):\r\n    if all([lol(x, a)==0 for x in range(1, 100000)]):\r\n        spsk.append(a)\r\n#print(max(spsk))",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:29:28.136163",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "7",
+                "code": "spsk = []\r\ndef lol(x, a):\r\n    f = ((x & 17 != 0) <= ((x & a != 0) <= (x&58 !=0))) <= ((x&8==0) and (x&a !=0) and (x&58 ==0))\r\n    return f\r\nfor a in range(43, 56):\r\n    if all([lol(x, a)==0 for x in range(1, 100000)]):\r\n        spsk.append(a)\r\n#print(max(spsk))",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:32:18.516685",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "7",
+                "code": "spsk = []\r\ndef lol(x, a):\r\n    f = ((x & 17 != 0) <= ((x & a != 0) <= (x&58 !=0))) <= ((x&8==0) and (x&a !=0) and (x&58 ==0))\r\n    return f\r\nfor a in range(43, 56):\r\n    if all([lol(x, a)==0 for x in range(1, 100000)]):\r\n        spsk.append(a)\r\nprint(max(spsk))",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:32:24.037214",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "8",
+                "code": "def lol(x, y, a):\r\n    f = (y + 3*x < a) or (x > 20) or (y > 40)\r\n    return f\r\nfor a in range(-100, 1000):\r\n    if all([lol(x, y, a) for x in range(1, 100) for y in range(1, 100)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:40:01.221834",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def lol(x, y, a):\r\n    f = (2*y + 3*x < a) or (x + y > 40)\r\n    return f\r\nfor a in range(-100, 1000):\r\n    if all([lol(x, y, a) for x in range(1, 41) for y in range(1, 41)]):\r\n        print(a)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:43:41.088433",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def lol(x, y, a):\r\n    f = (2*y + 3*x < a) or (x + y > 40)\r\n    return f\r\nfor a in range(-1000, 1000):\r\n    if all([lol(x, y, a) for x in range(1, 41) for y in range(1, 41)]):\r\n        print(a)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:43:50.748299",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def lol(x, y, a):\r\n    f = (2*y + 3*x < a) or (x + y > 40)\r\n    return f\r\nfor a in range(-1000, 1000):\r\n    if all([lol(x, y, a) for x in range(1, 100) for y in range(1, 100)]):\r\n        print(a)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:44:07.773014",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def lol(x, y, a):\r\n    f = (2*y + 3*x < a) or (x + y > 40)\r\n    return f\r\nfor a in range(-1000, 1000):\r\n    if all([lol(x, y, a) for x in range(41) for y in range(41)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:48:37.232203",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return A <= ((B and (not a)) <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:08:45.085583",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= ((C and (not A)) <= (not B))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:09:41.778834",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "p = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}\r\nq = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}\r\na = set()\r\ndef f(x):\r\n    P = x in p\r\n    Q = x in q\r\n    A = x in a\r\n    (P <= A) or ((not A) <= (not Q))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:14:46.142525",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "p = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}\r\nq = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}\r\na = set()\r\ndef f(x):\r\n    P = x in p\r\n    Q = x in q\r\n    A = x in a\r\n    return (P <= A) or ((not A) <= (not Q))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:15:57.412554",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "13",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return (not B) or ((not C) <= A)\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nans = 1\r\nfor i in a:\r\n    ans *= i\r\nprint(ans)",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:21:11.833192",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\np = {2,4,6,8,10,12,14,16,18,20}\r\nq = {5,10,15,20,25,30,35,40,45,50}\r\ndef f(x):\r\n    P = x in p\r\n    Q = x in q\r\n    A = x in a\r\n    return (A <= P) or (Q <= (not A))\r\nfor i in range(1000):\r\n    if f(i) == 0:\r\n       a.remove(i)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:01:52.203983",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\np = {2,4,6,8,10,12,14,16,18,20}\r\nq = {5,10,15,20,25,30,35,40,45,50}\r\ndef f(x):\r\n    P = x in p\r\n    Q = x in q\r\n    A = x in a\r\n    return (A <= P) and (Q <= (not A))\r\nfor i in range(1000):\r\n    if f(i) == 0:\r\n       a.remove(i)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:02:37.704131",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14.2",
+                "code": "a = set(range(10000))\r\np = {2,4,6,8,10,12,14,16,18,20}\r\nq = {5,10,15,20,25,30,35,40,45,50}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) or ((not Q) <= (not A))\r\nfor x in range(10000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:07:32.394890",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\nbits = [''.join(i) for i in product('01', repeat = 8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i.endswith('0')}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\nfor x in range(10000): \r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:16:46.629236",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\nbits = [''.join(i) for i in product('01', repeat = 8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i[-1] == '0'}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\nfor x in range(10000): \r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:18:40.371904",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\nbits = [''.join(i) for i in product('01', repeat = 8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i.endswith('0')}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\nfor x in bits: \r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:19:35.892340",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools import *\r\n#a = set()\r\n#p = list(range(25, 51))\r\n#q = list(range(54, 76))\r\ndef f(x, a1, a2): \r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\nOx = [i/4 for i in range(24*4, 76*4+1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n     if all(f(x, a1, a2) for x in Ox):\r\n         m.append(a2-a1)\r\nprint(min(m))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:56:32.312251",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools import *\r\n#a = set()\r\n#p = list(range(25, 51))\r\n#q = list(range(54, 76))\r\ndef f(x, a1, a2): \r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\nOx = [i/4 for i in range(24*4, 76*4+1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n     if all(f(x, a1, a2) for x in Ox):\r\n         m.append(a2-a1)\r\nprint(int(min(m)))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:57:04.337080",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'220.128.112.142/{mask}',0)\r\n    #if net == '220.128.96.0':\r\n        #print(net, net.netmask)\r\nprint(224)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:05:56.498018",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'111.81.208.27/{mask}', 0)\r\n    #print(net, net.network)\\\r\nprint(192)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:10:03.531015",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n   # net = ip_network(f'148.195.140.28/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(22)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:13:58.433932",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'241.185.253.57/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(9)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:17:27.072286",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'76.155.48.2/{mask}',0)\r\n    #print(net, net.netmask)\r\nprint(11)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:20:42.078728",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net1 = ip_network(f'112.117.107.70/{mask}', 0)\r\n    #net2 = ip_network(f'113.117.121.80/{mask}', 0)\r\n    #print(net1, net1.netmask)\r\n    #print(net2, net2.netmask)\r\nprint(255)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:25:51.004689",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n   # net1 = ip_network(f'112.117.107.80/{mask}', 0)\r\n    #net2 = ip_network(f'112.117.121.80/{mask}', 0)\r\n    #print(mask+1)\r\n    #print(net1, net1.netmask)\r\n    #print(net2, net2.netmask)\r\nprint(224)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:39:00.362199",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "from ipaddress import *\r\n#for mask in range(33):\r\n    #net1 = ip_network(f'157.127.182.76/{mask}', 0)\r\n    #net2 = ip_network(f'157.127.190.80/{mask}', 0)\r\n    #if net1 != net2:\r\n        #print(net1, net1.netmask)\r\nprint(21)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:42:39.269588",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\ndef func(x, y, z):\r\n    return not z and x or x and y\r\ntable = [(0,0,1),(0,1,0),(1,0,0),(0,0,0),(0,1,1),(1,1,0),(1,1,1)]\r\nfor p in permutations('xyz'):\r\n    if [func(**dict(zip(p, row))) for row in table] == [0,1,0,1,0,0,0,1]:\r\n        print(''.join(p))",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:32:00.851949",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\ndef func(x, y, z):\r\n    return not z and x or x and y\r\ntable = [(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,1,0),(1,1,1)]\r\nfor p in permutations('xyz'):\r\n    if [func(**dict(zip(p, row))) for row in table] == [0,1,0,1,0,0,0,1]:\r\n        print(''.join(p))",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:34:45.389253",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\ndef func(x, y, z):\r\n    return not z and x or x and y\r\ntable = [(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)]\r\nfor p in permutations('xyz'):\r\n    if [func(**dict(zip(p, row))) for row in table] == [0,1,0,1,0,0,0,1]:\r\n        print(''.join(p))",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:36:37.386542",
+                "ip": "192.168.137.114"
             }
         ],
-        "ip": "127.0.0.1"
+        "ip": [
+            "192.168.137.114",
+            "192.168.137.111"
+        ]
     },
-    "d": {
+    "Аскар": {
         "tasks": {
-            "2 №14": "Неудача"
+            "9 №14": "✅",
+            "10 №14": "✅",
+            "11 №14": "✅",
+            "12 №14": "✅",
+            "13 №14": "❌",
+            "1 №2": "✅",
+            "2 №2": "✅",
+            "3 №15": "❌",
+            "1 №15": "✅",
+            "2 №15": "✅",
+            "4 №15": "✅",
+            "5 №15": "❌",
+            "6 №15": "✅",
+            "8 №15": "✅",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "7 №13": "✅"
         },
         "history": [
             {
                 "topic": "№14",
+                "task_id": "9",
+                "code": "for x in \"0123456789ABCDEFGHIJKL\":\r\n    for y in \"0123456789ABC\":\r\n        a = int(f\"{x}23{x}5\", 22) - int(f\"67{y}9{y}\", 13)\r\n        if a % 57 == 0:\r\n            print(x, y, a//57)",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:01:48.923164",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in \"0123456789ABCDEFGHIJKL\":\r\n    for y in \"0123456789ABC\":\r\n        a = int(f\"{x}23{x}5\", 22) - int(f\"67{y}9{y}\", 13)\r\n        if a % 57 == 0:\r\n            print(int(x, 22), int(y, 13), a//57)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:03:42.686927",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in \"0123456789ABCDEFGHIJKL\":\r\n    for y in \"0123456789ABC\":\r\n        a = int(f\"{x}23{x}5\", 22) - int(f\"67{y}9{y}\", 13)\r\n        if a % 57 == 0:\r\n            print(int(x, 22), int(y, 13), a//57)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:05:00.022724",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "print(\"25871\")\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:05:14.597256",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "print(\"25871\")\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:05:21.391824",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "print(\"9\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:13:09.237714",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "print(\"9\")",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:15:04.213189",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:23:30.912016",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:23:37.054348",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "for N in range(8, 35):\r\n    c = N + 2\r\n    a = int(\"205\", N) + int(\"55\", 8)\r\n    b = int(\"196\", c)\r\n    if a == b:\r\n        print(N)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:25:37.798025",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:29:33.589672",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:29:40.603684",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:29:47.117746",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "12",
+                "code": "for n in range(2, 37):\r\n    if 56 % n == 1:\r\n        if 45 % n == 1:\r\n            print(n)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:35:40.897455",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№14",
+                "task_id": "13",
+                "code": "for n in range(2, 37):\r\n    if 56 % n == 1:\r\n        if 45 % n == 1:\r\n            print(n)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:35:49.746856",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import*\r\ndef f(x, y, z):\r\n    return not z and x or x and y\r\n\r\ntable = [(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]\r\nfor p in permutations(\"xyz\"):\r\n    if [f(**dict(zip(p, row))) for row in table] == [0, 1, 0, 1, 0, 0, 0, 1]:\r\n        print(p)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:31:00.495904",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import*\r\ndef f(x, y, z):\r\n    return not z and x or x and y\r\n\r\ntable = [(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]\r\nfor p in permutations(\"xyz\"):\r\n    if [f(**dict(zip(p, row))) for row in table] == [0, 1, 0, 1, 0, 0, 0, 1]:\r\n        s = \"\".join(p)\r\n        print(s)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:33:38.852978",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№2",
                 "task_id": "2",
-                "code": "print()",
-                "result": "Неудача",
-                "timestamp": "2024-11-11T23:20:48.169744",
+                "code": "from itertools import*\r\ndef f(x, y, w, z):\r\n    return not(x <= w) or (y <= z) or not y\r\n\r\nfor a1,a2,a3,a4,a5,a6,a7 in product([0, 1], repeat = 7):\r\n    table = [(a1, 1, a2, 0), (a3, 0, 1, a4), (a5, a6, 0, a7)]\r\n    for p in permutations('xywz'):\r\n        if [f(**dict(zip(p, row))) for row in table] == [0, 0, 0]:\r\n            s = \"\".join(p)\r\n            print(s)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:44:26.028040",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(a,x):\r\n    f = (a%9==0) and ((280%x==0) <= ((a%x!=0) <= (730%x!=0)))\r\n    return f\r\n\r\nfor a in range(1,10000):\r\n    if all([mf(a,x)==1 for x in range(1,10000)]):\r\n        print(a)\r\n        break\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:23:18.318065",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "1",
+                "code": "def mf(a,x):\r\n    f = (a%9==0) and ((280%x==0) <= ((a%x!=0) <= (730%x!=0)))\r\n    return f\r\n\r\nfor a in range(1,10000):\r\n    if all([mf(a,x)==1 for x in range(1,10000)]):\r\n        print(a)\r\n        break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:23:30.593203",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def mf(a,x):\r\n    f = ((x%34==0) and (x%51!=0)) <= ((x%a!=0)or(x%51==0))\r\n    return f\r\n\r\n\r\nfor a in range(1,10000):\r\n    if all([mf(a,x)==1 for x in range(1,100000)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:13:52.639017",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def af(a,x):\r\n    f = (x&41==0) <= ((x&119!=0) <= (x&a!=0))\r\n    return f\r\n\r\n\r\nfor a in range(1,10000):\r\n    if all([af(a,x)==1 for x in range(1,100000)]):\r\n        print(a)\r\n        break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:18:10.352268",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def af(a,x):\r\n    f = (x & a == 0) and (x&41!=0) and (x & 33 == 0)\r\n    return f\r\n\r\nfor a in range(1,1000):\r\n    if all([af(a,x) for x in range(1,1000)]):\r\n            print(a)\r\n            break\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:24:05.511721",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def af(a,x):\r\n    f = (x & a == 0) and (x&41!=0) and (x & 33 == 0)\r\n    return f\r\n\r\nfor a in range(1,10000):\r\n    if all([af(a,x)==0 for x in range(1,10000)]):\r\n            print(a)\r\n            break\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:24:51.394487",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def af(a,x):\r\n    f = (x & a == 0) and (x&41!=0) and (x & 33 == 0)\r\n    return f\r\n\r\nfor a in range(1,10000):\r\n    if all([af(a,x)==0 for x in range(1,10000)]):\r\n            print(a)\r\n            break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:25:37.236075",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№15",
+                "task_id": "8",
+                "code": "print('101')",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:42:51.267350",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "print(\"192\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:11:59.537725",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"128\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:13:20.389289",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"0\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:13:31.192239",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"22\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:18:53.930193",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(\"22\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:21:37.992097",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(\"23\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:21:43.273748",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(\"9\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:25:43.140747",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(\"9\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:25:49.330967",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(\"11\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:32:34.130205",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "print(\"224\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:37:30.848202",
+                "ip": "192.168.137.107"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "print(\"192\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:11:36.573052",
+                "ip": "192.168.137.107"
+            }
+        ],
+        "ip": [
+            "192.168.137.107"
+        ]
+    },
+    "Адиля": {
+        "tasks": {
+            "13 №1--": "✅",
+            "14 №1--": "✅",
+            "15 №1--": "✅",
+            "16 №1--": "✅",
+            "9 №1--": "❌",
+            "1 №2": "✅",
+            "2 №2": "✅",
+            "3 №2": "✅",
+            "12 №15": "✅",
+            "12.1 №15": "✅",
+            "13 №15": "✅",
+            "14 №15": "✅",
+            "14.2 №15": "✅",
+            "15 №15": "✅",
+            "16 №15": "✅",
+            "17 №15": "✅",
+            "2 №13": "✅",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "7 №13": "✅",
+            "8 №13": "✅",
+            "9 №13": "❌"
+        },
+        "history": [
+            {
+                "topic": "№1--",
+                "task_id": "13",
+                "code": "res = []\r\nfor n in range(9, 25):\r\n    a = []\r\n    s = 338\r\n    while s > 0:\r\n        a = [s%n] + a\r\n        s //= n\r\n    if len(a) == 3 and a[-1] == 2:\r\n        res.append(n)\r\nprint(res[-1])",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:08:09.595813",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "14",
+                "code": "cnt = 0\r\nfor n in range(51):\r\n    a = []\r\n    while n > 0:\r\n        a = [n % 3] + a\r\n        n //= 3\r\n    if len(a) >= 2 and a[-2] == 2 and a[-1] == 1:\r\n        cnt += 1\r\nprint(cnt)",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:40:41.842141",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "15",
+                "code": "cnt = 0\r\nfor n in range(101):\r\n    a = []\r\n    while n > 0:\r\n        a = [n % 16] + a\r\n        n //= 16\r\n    if len(a) > 0 and a[-1] == 12:\r\n        cnt += 1\r\nprint(cnt)",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:42:50.760484",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "16",
+                "code": "cnt = 0\r\nfor n in range(101):\r\n    a = []\r\n    while n > 0:\r\n        a = [n % 16] + a\r\n        n //= 16\r\n    if len(a) > 0 and a[-1] == 12:\r\n        cnt += 1\r\nprint(cnt)",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:42:58.133742",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "16",
+                "code": "cnt = 0\r\nfor x in range(100):\r\n    n16 = x\r\n    n5 = x\r\n    a16 = []\r\n    a5 = []\r\n    while n16 > 0:\r\n        a16 = [n16 % 16] + a16\r\n        n16 //= 16\r\n    while n5 > 0:\r\n        a5 = [n5 % 5] + a5\r\n        n5 //= 5\r\n    if len(str(x)) == 2 and a16[-1] == 10 and a5[-1] == 3:\r\n        print(x)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:50:13.786648",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "9",
+                "code": "cnt = 0\r\nfor x in range(100):\r\n    n16 = x\r\n    n5 = x\r\n    a16 = []\r\n    a5 = []\r\n    while n16 > 0:\r\n        a16 = [n16 % 16] + a16\r\n        n16 //= 16\r\n    while n5 > 0:\r\n        a5 = [n5 % 5] + a5\r\n        n5 //= 5\r\n    if len(str(x)) == 2 and a16[-1] == 10 and a5[-1] == 3:\r\n        print(x)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:50:20.053099",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№1--",
+                "task_id": "16",
+                "code": "cnt = 0\r\nfor x in range(100):\r\n    n16 = x\r\n    n5 = x\r\n    a16 = []\r\n    a5 = []\r\n    while n16 > 0:\r\n        a16 = [n16 % 16] + a16\r\n        n16 //= 16\r\n    while n5 > 0:\r\n        a5 = [n5 % 5] + a5\r\n        n5 //= 5\r\n    if len(str(x)) == 2 and a16[-1] == 10 and a5[-1] == 3:\r\n        print(x)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:50:37.009412",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\n\r\ndef f(x, y, z):\r\n    return ((not z) and x) or (x and y)\r\n\r\ntable = [(0,0,0), (0,0,1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]\r\nfor p in permutations('xyz'):\r\n    if [f(**dict(zip(p, row))) for row in table] == [0, 1, 0, 1, 0, 0, 0, 1]:\r\n        print(p)",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:26:58.947671",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\n\r\ndef f(x, y, z):\r\n    return ((not z) and x) or (x and y)\r\n\r\ntable = [(0,0,0), (0,0,1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]\r\nfor p in permutations('xyz'):\r\n    if [f(**dict(zip(p, row))) for row in table] == [0, 1, 0, 1, 0, 0, 0, 1]:\r\n        print(*p)",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:27:32.497175",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\n\r\ndef f(x, y, z):\r\n    return ((not z) and x) or (x and y)\r\n\r\ntable = [(0,0,0), (0,0,1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]\r\nfor p in permutations('xyz'):\r\n    if [f(**dict(zip(p, row))) for row in table] == [0, 1, 0, 1, 0, 0, 0, 1]:\r\n        print(p[0] + p[1] + p[2])",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:29:01.023112",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "from itertools import *\r\n\r\ndef f(x, y, z, w):\r\n    return not(x <= w) or (y <= z) or not(y)\r\n\r\nfor i1, i2, i3, i4, i5, i6, i7 in product([0, 1], repeat=7):\r\n    table = [(i1, 1, i2, 0), (i3, 0, 1, i4), (i5, i6, 0, i7)]\r\n    for p in permutations('xyzw'):\r\n        if [f(**dict(zip(p, row))) for row in table] == [0, 0, 0]:\r\n            print(''.join(p))\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:37:03.900747",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№2",
+                "task_id": "3",
+                "code": "from itertools import *\r\n\r\ndef f(x, y, w, z):\r\n    return not(x == (w and not z)) and (y == (x and not w))\r\n\r\nfor i1, i2, i3, i4, i5, i6 in product([0, 1], repeat=6):\r\n    table = [(i1, i2, 0, i3), (i4, 0, i5, 0), (0, i6, 1, 0)]\r\n    if len(table) == len(set(table)):\r\n        for p in permutations('xywz'):\r\n            if [f(**dict(zip(p, row))) for row in table] == [1, 1, 1]:\r\n                print(''.join(p))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:48:20.437326",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= (C and (not A)) <= (not B)\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:11:19.602591",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= ((C and (not A)) <= (not B))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:14:14.792096",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= ((C and (not A)) <= (not B))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:14:28.132570",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}\r\nq = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (P <= A) or ((not A) <= (not Q))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:18:32.142455",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}\r\nq = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (P <= A) or ((not A) <= (not Q))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:18:49.104166",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "13",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C =  x  in c\r\n    return (not B) or (not C) <= A\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\n\r\nr = 1\r\nfor i in a:\r\n    r *= i\r\n\r\nprint(r)",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:23:46.153843",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:01:23.029752",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14.2",
+                "code": "a = set(range(1000))\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) or ((not Q) <= (not A))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\n\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:04:57.986145",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\nbits = [''.join(i) for i in product('01', repeat=8)]\r\n\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i[-1] == '0'}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\n\r\nfor x in bits:\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:16:01.724783",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "a = set()\r\np = {i for i in range(25, 51)}\r\nq = {i for i in range(54, 76)}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:19:46.615235",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools  import *\r\n\r\ndef f(x, a1, a2):\r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\nOx = [i / 4 for i in range(24 * 4, 76 * 4 + 1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n    if all(f(x, a1, a2) == 1 for x in Ox):\r\n        m.append(a2 - a1)\r\nprint(min(m))\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:32:36.118271",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools  import *\r\n\r\ndef f(x, a1, a2):\r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\nOx = [i / 4 for i in range(24 * 4, 76 * 4 + 1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n    if all(f(x, a1, a2) == 1 for x in Ox):\r\n        m.append(a2 - a1)\r\n        \r\nprint(int(min(m)))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:33:00.910349",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "from itertools import *\r\n\r\ndef f (x, a1, a2):\r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 37\r\n    Q = 32 <= x <= 50\r\n    return (A and (not Q)) <= (P or Q)\r\n\r\nOx = [i / 4 for i in range(25 * 4, 52 * 4 + 1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n    if all(f(x, a1, a2) == 1 for x in Ox):\r\n        m.append(a2 - a1)\r\nprint(min(m))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:38:16.786667",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "from itertools import *\r\n\r\ndef f (x, a1, a2):\r\n    A = a1 <= x <= a2\r\n    P = 25 <= x <= 37\r\n    Q = 32 <= x <= 50\r\n    return (A and (not Q)) <= (P or Q)\r\n\r\nOx = [i / 4 for i in range(25 * 4, 52 * 4 + 1)]\r\nm = []\r\nfor a1, a2 in combinations(Ox, 2):\r\n    if all(f(x, a1, a2) == 1 for x in Ox):\r\n        m.append(a2 - a1)\r\nprint(int(max(m)))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:38:49.588612",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "#from ipaddress import *\r\n\r\n#for mask in range(33):\r\n#    net = ip_network(f'220.128.112.142/{mask}', 0)\r\n#    print(net, net.netmask)\r\n#220.128.96.0/19 255.255.224.0\r\nprint(224)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:06:51.515895",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'111.81.208.27/{mask}', 0)\r\n#    print(net, net.netmask)\r\nprint(192)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:12:30.990601",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(22)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:21:19.631686",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'148.195.140.28/{mask}', 0)\r\n#    print(net, net.netmask)\r\n#print('.'.join(f'{x:>08b}' for x in [255, 255, 252, 0]))\r\nprint(22)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:21:39.840702",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'241.185.253.57/{mask}', 0)\r\n#    print(net, net.netmask)\r\n#print('.'.join(f'{x:>08b}' for x in [255, 255, 252, 0]))\r\nprint(10)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:26:02.542190",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'241.185.253.57/{mask}', 0)\r\n#    print(net, net.netmask)\r\n#print('.'.join(f'{x:>08b}' for x in [255, 255, 252, 0]))\r\nprint(9)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:26:13.285153",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'76.155.48.2/{mask}', 0)\r\n#    print(net, net.netmask)\r\nprint(17)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:49.038274",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'76.155.48.2/{mask}', 0)\r\n#    print(net, net.netmask)\r\nprint(16)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:29:00.285617",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'76.155.48.2/{mask}', 0)\r\n#    print(net, net.netmask)\r\nprint(11)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:30:18.432007",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "print(224)\r\n#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'112.117.107.70/{mask}', 0)\r\n#    net2 = ip_network(f'112.117.121.80/{mask}', 0)\r\n#    if net == net2:\r\n#        print(net, net.netmask)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:34:36.293068",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "print(0)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:38:15.502166",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "print(0)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:38:26.450187",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "print(21)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:41:05.182512",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n#    net = ip_network(f'157.127.182.76/{mask}', 0)\r\n#    net2 = ip_network(f'157.127.190.80/{mask}', 0)\r\n#    if net != net2:\r\n#        print(net, net.netmask)\r\nprint(21)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:42:05.054681",
+                "ip": "192.168.137.115"
+            },
+            {
+                "topic": "№13",
+                "task_id": "9",
+                "code": "from ipaddress import *\r\n\r\nnet = ip_network(f'255.255.255.255/255.255.254.0', 0)\r\nprint(net.num_addresses)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:58:22.494072",
+                "ip": "192.168.137.115"
+            }
+        ],
+        "ip": [
+            "192.168.137.112"
+        ]
+    },
+    "Ислам": {
+        "tasks": {
+            "9 №14": "❌",
+            "1 №2": "✅",
+            "2 №2": "✅",
+            "3 №2": "✅",
+            "4 №2": "❌",
+            "1 №15": "✅",
+            "2 №15": "✅",
+            "4 №15": "✅",
+            "6 №15": "✅",
+            "8 №15": "✅",
+            "12 №15": "✅",
+            "12.1 №15": "✅",
+            "13 №15": "✅",
+            "14 №15": "✅",
+            "15 №15": "❌",
+            "16 №15": "✅",
+            "2 №13": "✅",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "7 №13": "✅",
+            "8 №13": "✅"
+        },
+        "history": [
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - 6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y\r\n        if a % 57 == 0:\r\n            print(x, y, a)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:25:10.698216",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - 6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y\r\n        if a % 57 == 0:\r\n            print(x, y, a)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:25:15.681419",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - 6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y\r\n        if a % 57 == 0:\r\n            print(6,9)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:29:56.771728",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            print(x, y, a // 57)\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:33:58.547496",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(9)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:39:30.836277",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(17)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:40:05.578093",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(10)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:40:20.246555",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(25)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:40:26.120142",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(18)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:40:36.671498",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(25587)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:41:15.094044",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range(1,22):\r\n    for y in range(13):\r\n        a = x*22**4 + 2*22*3 + 3*22**2 + x*22 + 5 - (6 *13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a % 57 == 0:\r\n            c = 0\r\nprint(22587)\r\n\r\n ",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:41:24.716790",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import *\r\ndef f(x,y,z):\r\n    return not z and x or x and y\r\n\r\ntable =[(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)]\r\nfor p in permutations('xyz'):\r\n    if [f(**dict(zip(p,row))) for row in table] == [0,1,0,1,0,0,0,1]:\r\n        print(p) \r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:31:25.876192",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "print('z', 'y', 'x')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:32:07.522228",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "print(('z', 'y', 'x'))\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:32:21.299545",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "print(('z', 'y', 'x'))\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:32:31.110119",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "print('zyx')\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:33:16.830967",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "print('zyx')\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:33:24.223719",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "print('yxwz')\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:39:55.962411",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "3",
+                "code": "print('wxyz')\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:47:44.575589",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№2",
+                "task_id": "4",
+                "code": "print('wxyz')\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:47:51.272347",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№15",
+                "task_id": "1",
+                "code": "def mf(a,x):\r\n    f = (a%9==0) and ((280%x==0)<=((a%x!=0)<=(730%x!=0)))\r\n    return f\r\n\r\nfor a in range (1,1000):\r\n    if all([mf(a,x) == 1 for x in range(1,100000)]):\r\n           print(a)\r\n           break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:15:50.935628",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def mf(a,x):\r\n    f = ((x%34==0) and (x%51!=0)) <= ((x%a!=0) or (x%51==0))\r\n    return f\r\n\r\nfor a in range (1,1000):\r\n    if all([mf(a,x) == 1 for x in range(1,10000)]):\r\n           print(a)\r\n           break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:12:31.145832",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def mf(a,x):\r\n    f = (x&41==0) <= ((x&119!=0) <= (x&a!=0))\r\n    return f\r\n\r\nfor a in range (1,10001):\r\n    if all([mf(a,x) == 1 for x in range(1,100000)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:26:03.192102",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(a,x):\r\n    f = (x&a==0) and (x&41!=0) and (x&58==0)\r\n    return f\r\n\r\nfor a in range (1,10001):\r\n    if all([mf(a,x) == 0 for x in range(1,100000)]):\r\n        print(a)\r\n        break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:32:43.512364",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(a,x):\r\n    f = (x&a==0) and (x&41!=0) and (x&33==0)\r\n    return f\r\n\r\nfor a in range (1,10001):\r\n    if all([mf(a,x) == 0 for x in range(1,100000)]):\r\n        print(a)\r\n        break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:34:01.850667",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "8",
+                "code": "print(101)",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:41:55.959848",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2,4,6,8,10,12}\r\nc = {3,6,9,12,15}\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= ((C and (not A)) <= (not B))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:09:33.582403",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1,3,4,9,11,13,15,17,19,21}\r\nq = {3,6,9,12,15,18,21,24,27,30}\r\n\r\n\r\ndef f(x):\r\n    A = x in a \r\n    P = x in p\r\n    Q = x in q\r\n    return ((P) <= (A)) or ((not A) <= (not Q))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:14:18.181279",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1,3,4,9,11,13,15,17,19,21}\r\nq = {3,6,9,12,15,18,21,24,27,30}\r\n\r\n\r\ndef f(x):\r\n    A = x in a \r\n    P = x in p\r\n    Q = x in q\r\n    return ((P) <= (A)) or ((not A) <= (not Q))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:15:45.563061",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "13",
+                "code": "a = set() \r\n\r\n\r\ndef f(x):\r\n    A = x in a \r\n    B = x in {2,4,6,8,10,12}\r\n    C = x in {3,6,9,12,15}\r\n    return (not B) or (not C) <= A\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(a)\r\n\r\nres = 1\r\nfor el in a:\r\n    res*=el\r\nprint(res)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:20:28.918772",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "13",
+                "code": "a = set() \r\n\r\n\r\ndef f(x):\r\n    A = x in a \r\n    B = x in {2,4,6,8,10,12}\r\n    C = x in {3,6,9,12,15}\r\n    return (not B) or (not C) <= A\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\n\r\nres = 1\r\nfor el in a:\r\n    res*=el\r\nprint(res)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:20:36.719658",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in {2,4,6,8,10,12,14,16,18,20}\r\n    Q = x in {5,10,15,20,25,30,35,40,45,50}\r\n    return (A <= P) and (Q <= (not A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(len(a))\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:05:10.994302",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\nbits = [''.join(i) for i in product('01', repeat=8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i[-1] == '0'}\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\n\r\n\r\nfor x in bits:\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:18:01.322142",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\n \r\ndef f(x, a1, a2):\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    A = a1 <= x <= a2\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nl = [i / 4 for i in range(24*4, 76*4 + 1)]\r\nm = []\r\nfor a1,a2 in combinations(l,2):\r\n    if all(f(x, a1, a2) == 1 for x in l):\r\n        m.append(a2 - a1)\r\nprint(min(m))\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:40:15.877014",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\n \r\ndef f(x, a1, a2):\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    A = a1 <= x <= a2\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nl = [i / 4 for i in range(24*4, 76*4 + 1)]\r\nm = []\r\nfor a1,a2 in combinations(l,2):\r\n    if all(f(x, a1, a2) == 1 for x in l):\r\n        m.append(a2 - a1)\r\nprint(int(min(m)))\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:41:10.096810",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\n \r\ndef f(x, a1, a2):\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    A = a1 <= x <= a2\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nl = [i / 4 for i in range(24*4, 76*4 + 1)]\r\nm = []\r\nfor a1,a2 in combinations(l,2):\r\n    if all(f(x, a1, a2) == 1 for x in l):\r\n        m.append(a2 - a1)\r\nprint(int(min(m)))\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:41:21.671425",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools import *\r\n\r\n \r\ndef f(x, a1, a2):\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    A = a1 <= x <= a2\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nl = [i / 4 for i in range(24*4, 76*4 + 1)]\r\nm = []\r\nfor a1,a2 in combinations(l,2):\r\n    if all(f(x, a1, a2) == 1 for x in l):\r\n        m.append(a2 - a1)\r\nprint(int(min(m)))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:41:27.852596",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "from itertools import *\r\n\r\n \r\ndef f(x, a1, a2):\r\n    P = 25 <= x <= 50\r\n    Q = 54 <= x <= 75\r\n    A = a1 <= x <= a2\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nl = [i / 4 for i in range(24*4, 76*4 + 1)]\r\nm = []\r\nfor a1,a2 in combinations(l,2):\r\n    if all(f(x, a1, a2) == 1 for x in l):\r\n        m.append(a2 - a1)\r\nprint(int(min(m)))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:41:39.651814",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "224",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:12:06.159233",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'220.128.112.142/{mask}' ,0)\r\n    print(net, net.netmask)\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:12:21.977062",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'220.128.112.142/{mask}' ,0)\r\n    print('224')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:12:34.021134",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'220.128.112.142/{mask}' ,0)\r\nprint('224')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:12:43.853387",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('255')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:13:45.900015",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('255')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:16:08.223056",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('192')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:17:09.174031",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('5')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:18:53.305313",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('22')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:23:30.225665",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('22')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:15.021935",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('32')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:29.909087",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('32')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:34.923522",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('10')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:26:03.479436",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('9')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:26:23.947810",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('13')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:22.044471",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('11')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:30:14.964074",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('255')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:31:55.602544",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('224')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:37:11.446047",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('0')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:38:38.557444",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('20')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:38:54.092983",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('1')\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:39:10.216725",
+                "ip": "192.168.137.112"
+            },
+            {
+                "topic": "№13",
+                "task_id": "8",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n    net = ip_network(f'111.81.208.27/{mask}' ,0)\r\nprint('21')\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:40:08.663203",
+                "ip": "192.168.137.112"
+            }
+        ],
+        "ip": [
+            "192.168.137.113",
+            "192.168.137.112",
+            "192.168.137.109",
+            "192.168.137.111",
+            "192.168.137.114"
+        ]
+    },
+    "Билал": {
+        "tasks": {
+            "9 №14": "❌",
+            "10 №14": "✅",
+            "11 №14": "❌",
+            "12.1 №15": "✅",
+            "15 №15": "✅",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅"
+        },
+        "history": [
+            {
+                "topic": "№14",
+                "task_id": "9",
+                "code": "for x in range (1,22):\r\n    for y in range (0,13):\r\n        a = x * 22**4 + 2*22**3 + 3*22**2 + x * 22 + 5 - (6 * 13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a%57 == 0:\r\n            print(x,y,a//57)",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:31:26.677078",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for x in range (1,22):\r\n    for y in range (0,13):\r\n        a = x * 22**4 + 2*22**3 + 3*22**2 + x * 22 + 5 - (6 * 13**4 + 7*13**3 + y*13**2 + 9*13 + y)\r\n        if a%57 == 0:\r\n            print(x,y,a//57)",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:34:27.078312",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for x in range (2,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x + 2) + 3:\r\n        print(x)",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:48:32.881760",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№14",
+                "task_id": "11",
+                "code": "for x in range (2,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x + 2) + 3:\r\n        print(x)",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:50:36.540810",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1, 3, 4, 9, 11, 13, 15, 17, 19, 21}\r\nq = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30}\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in p\r\n    C = x in q\r\n    return ((B) <= (A)) or ((not A) <= (not C))\r\n\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:08:10.711289",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\n\r\nbits = [''.join(i) for i in product('01', repeat=8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i[-1] == '0'}\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\n\r\n\r\nfor x in bits:\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:22:31.293348",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'111.81.208.27/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(192)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:18:51.961879",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'148.195.140.28/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(22)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:23:50.672883",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'241.185.253.57/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(9)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:28:03.268796",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n    #net = ip_network(f'76.155.48.2/{mask}', 0)\r\n    #print(net, net.netmask)\r\nprint(11)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:29:52.145821",
+                "ip": "192.168.137.113"
+            }
+        ],
+        "ip": [
+            "192.168.137.108",
+            "192.168.137.113"
+        ]
+    },
+    "Айнур": {
+        "tasks": {
+            "10 №14": "✅",
+            "1 №15": "✅",
+            "2 №15": "✅",
+            "4 №15": "✅",
+            "3 №15": "✅",
+            "5 №15": "✅",
+            "12 №15": "✅",
+            "12.1 №15": "✅",
+            "15 №15": "❌",
+            "3 №13": "✅",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "2 №2": "✅",
+            "1 №2": "✅"
+        },
+        "history": [
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for  x  in (1,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x+2) + 3:\r\n        print(x)\r\n    \r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:37:34.122635",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for  x  in (2,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x+2) + 3:\r\n        print(x)\r\n    \r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:39:15.807950",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for  x  in (2,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x+2) + 3:\r\n        print(x)\r\n    \r\n",
+                "result": "❌",
+                "timestamp": "2024-11-14T12:42:19.670980",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№14",
+                "task_id": "10",
+                "code": "for  x  in range (2,100):\r\n    if 1*x**2 + 2*x + 3 == 9*(x+2) + 3:\r\n        print(x)\r\n    \r\n",
+                "result": "✅",
+                "timestamp": "2024-11-14T12:42:30.231000",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "1",
+                "code": "def s(a,x):\r\n    f = (a%9==0) and ((280%x==0)<=((a%x!=0)<=(730%x!=0)))\r\n    return f\r\nfor a in range(1,100):\r\n    if all([s(a,x)==1 for x in range(1,1000)]):\r\n        print(a)\r\n        break\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:56:36.457145",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def s(a,x):\r\n    f = (((x%34==0) and (x%51!=0)) <= ((x%a!=0)or(x%51)))\r\n    return f\r\nfor a in range(1,100):\r\n    if all([s(a,x)==1 for x in range(1,1000)]):\r\n        print(a)\r\n        break\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:59:37.652763",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def s(a,x):\r\n    f = (((x%34==0) and (x%51!=0)) <= ((x%a!=0)or(x%51)))\r\n    return f\r\nfor a in range(1,1000):\r\n    if all([s(a,x)==1 for x in range(1,1000)]):\r\n        print(a)\r\n        break\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:00:24.758539",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def s(a,x):\r\n    f = (((x%34==0) and (x%51!=0)) <= ((x%a!=0)or(x%51==0)))\r\n    return f\r\nfor a in range(1,1000):\r\n    if all([s(a,x)==1 for x in range(1,1000)]):\r\n        print(a)\r\n        break\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:03:04.190997",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "print(84)\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:14:33.563401",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "print(84)\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:14:46.557473",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def z(a,x):\r\n    f =(x&41 == 0) <= ((x&119!=0) <= (x&a!=0))\r\n    return f\r\nfor a in range(1,10000):\r\n    if all([z(a,x)==1 for x in range(1,10000)]):\r\n        print(a)\r\n        break\r\n\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:19:53.319704",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def s(x,a):\r\n    f = (( (x&13!=0) or (x&a == 0)) <= (x&13 != 0)) or (x&a != 0) or (x&39 == 0)\r\n    return f\r\nfor a in range(1,10000):\r\n    if all([s(x,a) == 1 for x in range (1,100000)]):\r\n        print(a)\r\n        break\r\n\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:24:04.324494",
+                "ip": "192.168.137.113"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\ns = {2, 4, 6, 8, 10, 12}\r\nd = {3, 6, 9, 12, 15}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in s\r\n    C = x in d\r\n    return  B <= ((C and (not A)) <= (not B))\r\n\r\nfor x in range (100000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:16:41.480324",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a=set()\r\ns= {1,3,4,9,11,13,15,17,19,21}\r\nd={3,6,9,12,15,18,21,24,27,30}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in s\r\n    C = x in d\r\n    return ((B) <= (A)) or (( not A) <= (not d))\r\n\r\nfor x in range (100000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))\r\n        \r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:23:10.138749",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a=set()\r\ns= {1,3,4,9,11,13,15,17,19,21}\r\nd={3,6,9,12,15,18,21,24,27,30}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in s\r\n    C = x in d\r\n    return ((B) <= (A)) or (( not A) <= (not d))\r\n\r\nfor x in range (1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n        \r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:04:51.050149",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a=set()\r\ns= {1,3,4,9,11,13,15,17,19,21}\r\nd={3,6,9,12,15,18,21,24,27,30}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in s\r\n    C = x in d\r\n    return ((B) <= (A)) or (( not A) <= (not C))\r\n\r\nfor x in range (1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n        \r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:07:09.676597",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import*\r\n\r\nbits = [''.join(i) for i in product('01', repeat = 8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if [-1] == \"0\"}\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B= x in p\r\n    C = x in q\r\n    return ((not A) <= ((not B)) and  (not C) )\r\n\r\nfor x in bits:\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))\r\n        \r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:21:57.811734",
+                "ip": "192.168.137.111"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "print(192)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:10:08.100529",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "print(192)\r\n#from ipaddress import*\r\n#for mask in range(33):\r\n    #net = ip_network(f'111.81.208.27/{mask}',0)\r\n    #print(net , net.netmask)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:12:08.018169",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "#from ipaddress import*\r\n#for mask in range(33):\r\n    #net = ip_network(f'148.195.140.0/{mask}',0)\r\n    #print(net,net.netmask) \r\nprint(252)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:20:50.860813",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "#from ipaddress import*\r\n#for mask in range(33):\r\n    #net = ip_network(f'148.195.140.28/{mask}',0)\r\n    #print(net,net.netmask) \r\nprint(252)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:21:42.879295",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "#from ipaddress import*\r\n#for mask in range(33):\r\n    #net = ip_network(f'148.195.140.28/{mask}',0)\r\n    #print(net,net.netmask) \r\nprint(22)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:23:09.077093",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(22)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:08.888388",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(1)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:27.409676",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(23)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:49.551954",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(21)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:24:56.284752",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(10)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:26:34.934686",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "print(9)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:26:56.037152",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(13)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:01.113053",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(12)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:36.431711",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(10)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:57.145763",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(10)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:29:09.205421",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(11)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:29:31.932054",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "from itertools import*\r\ndef f(x,y,z):\r\n    return not z and x or x and y\r\n\r\na = [(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)]\r\nfor p in permutations('zxy'):\r\n    if [f(**dict(zip(p,r))) for r in a] == [0,1,0,1,0,0,0,1]:\r\n        print(''.join(p))\r\n\r\n\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-18T12:33:17.728659",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№2",
+                "task_id": "1",
+                "code": "from itertools import*\r\ndef f(x,y,z):\r\n    return not z and x or x and y\r\n\r\na = [(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)]\r\nfor p in permutations('zxy'):\r\n    if [f(**dict(zip(p,r))) for r in a] == [0,1,0,1,0,0,0,1]:\r\n        print(''.join(p))\r\n\r\n\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:33:53.275800",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "\r\n\r\nfrom itertools import*\r\ndef f(x,y,z,w):\r\n    return not(x<=w)or(y<=z)or not y\r\nfor q1,q2,q3,q4,q5,q6,q7 in product([0,1],repeat = 7):\r\n    a = [(q1,1,q2,0),(q3,0,1,q4),(q5,q6,0,q7)]\r\n    for p in permutations('xyzw'):\r\n         if [f(**dict(zip(p,r))) for r in a] == [0,0,0]:\r\n               print(''.join(p))\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-18T12:43:09.426335",
+                "ip": "192.168.137.110"
+            }
+        ],
+        "ip": [
+            "192.168.137.113",
+            "192.168.137.110"
+        ]
+    },
+    "Джамиль": {
+        "tasks": {
+            "1 №15": "✅",
+            "2 №15": "✅",
+            "3 №15": "✅",
+            "4 №15": "✅",
+            "5 №15": "✅",
+            "6 №15": "✅",
+            "7 №15": "✅",
+            "8 №15": "✅",
+            "9 №15": "✅",
+            "10 №15": "❌",
+            "12 №15": "✅",
+            "12.1 №15": "✅",
+            "13 №15": "✅",
+            "14 №15": "✅",
+            "14.2 №15": "✅",
+            "15 №15": "✅",
+            "16 №15": "✅",
+            "17 №15": "❌",
+            "2 №13": "❌",
+            "3 №13": "❌",
+            "4 №13": "✅",
+            "5 №13": "✅",
+            "6 №13": "✅",
+            "7 №13": "✅"
+        },
+        "history": [
+            {
+                "topic": "№15",
+                "task_id": "1",
+                "code": "def mf(a,x):\r\n  f = (a%9==0) and ((280%x==0)<=((a%x!=0)<=(730%x!=0)))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:16:56.644581",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def mf(A,x):\r\n  f = ((x % 34 == 0) and not((x % 51 == 0))) <= (not((x % A == 0)) or (x % 51 == 0)) \r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:20:28.050883",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = (((x%36 == 0) and (x%42 == 0)) <= (x%A == 0)) and ( A*(A - 25) < 25* (A + 200))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:24:09.013276",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:24:59.604147",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:25:06.055725",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T11:25:45.094773",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:00:21.983111",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    s += [a]\r\nprint(s)\r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:01:49.259773",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def mf(A,x):\r\n  f = ((((x%36 == 0) and (x%42 == 0)) <= (x%A == 0))) and ( A*(A - 25) < 25 * (A + 200))\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    s += [a]\r\nprint(max(s))\r\n    ",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:01:58.170907",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def mf(A,x):\r\n  f = (x & 41 == 0) <= ((x & 119 != 0) <= (x & A != 0))\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    ",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:03:12.173999",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def mf(A,x):\r\n  f = (x & 41 == 0) <= ((x & 119 != 0) <= (x & A != 0))\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:03:18.941431",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "5",
+                "code": "def mf(A,x):\r\n  f =  (( (x & 13 != 0) or (x & A == 0)) <= (x & 13 != 0)) or (x & A != 0) or (x & 39 == 0) \r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:04:48.605555",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(A,x):\r\n  f =  (x & A == 0) and (x & 41 != 0) and (x & 33 == 0)\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:08:34.619064",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(A,x):\r\n  f =  (x & A == 0) and (x & 41 != 0) and (x & 33 == 0)\r\n  return f\r\n\r\ns = []\r\nfor a in range(1,1000):\r\n  if all([mf(a,x)==1 for x in range(1,1000)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:09:16.778991",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(A,x):\r\n  f =  (x & A == 0) and (x & 41 != 0) and (x & 33 == 0)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x)==1 for x in range(1,1000)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:09:29.293974",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(A,x):\r\n  f =  (x & A == 0) and (x & 41 != 0) and (x & 33 == 0)\r\n  return f\r\n\r\nfor A in range(1,1000):\r\n  if all([mf(A,x)==1 for x in range(1,10000)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:11:06.887839",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "6",
+                "code": "def mf(A,x):\r\n  f =  not((x & A == 0) and (x & 41 != 0) and (x & 33 == 0))\r\n  return f\r\n\r\nfor A in range(1,1000):\r\n  if all([mf(A,x)==1 for x in range(1,10000)]):\r\n    print(A)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:12:51.468433",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "7",
+                "code": "def mf(A,x):\r\n  f =  not(((x & 17 != 0) <= ((x & A != 0) <= (x & 58 != 0))) <= ((x & 8 == 0) and (x & A != 0) and (x & 58 == 0)))\r\n  return f\r\n\r\nfor A in range(43,56):\r\n  if all([mf(A,x)==1 for x in range(1,10000)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:23:32.043092",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "7",
+                "code": "def mf(A,x):\r\n  f =  not(((x & 17 != 0) <= ((x & A != 0) <= (x & 58 != 0))) <= ((x & 8 == 0) and (x & A != 0) and (x & 58 == 0)))\r\n  return f\r\n\r\nfor A in range(43,56):\r\n  if all([mf(A,x)==1 for x in range(1,10000)]):\r\n    print(A)",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:23:41.546349",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "7",
+                "code": "def mf(A,x):\r\n  f =  not(((x & 17 != 0) <= ((x & A != 0) <= (x & 58 != 0))) <= ((x & 8 == 0) and (x & A != 0) and (x & 58 == 0)))\r\n  return f\r\n\r\ns = []\r\nfor A in range(43,56):\r\n  if all([mf(A,x)==1 for x in range(1,10000)]):\r\n    s += [A]\r\nprint(max(s))",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:24:52.128686",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "8",
+                "code": "def mf(A,x,y):\r\n  f =  (y + 3*x < A) or (x > 20) or (y > 40) \r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,100) for y in range(1,100)]):\r\n    print(A)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:28:15.976773",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  (2*y + 3*x < A) or (x + y > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,100) for y in range(1,100)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:28:51.710296",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,100) for y in range(1,100)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:29:14.587970",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:30:35.142585",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(int(A) +1)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:31:20.153670",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(0,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:31:49.889580",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(0,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:32:10.525319",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(-100,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:34:22.506636",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(-100,1000):\r\n  if all([mf(A,x,y)==1 for x in range(1,200) for y in range(1,200)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:34:34.308599",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "9",
+                "code": "def mf(A,x,y):\r\n  f =  ((2*y + 3*x) < A) or ((x + y) > 40)\r\n  return f\r\n\r\ns = []\r\nfor A in range(-100,1000):\r\n  if all([mf(A,x,y)==1 for x in range(0,100) for y in range(0,100)]):\r\n    print(A)\r\n    break",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:35:39.460397",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "10",
+                "code": "def mf(A,x,y,z):\r\n  f =  (220 != y + 2*x + z) or (A < 6*x) or (A < y) or (A < 2*z)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y,z)==1 for x in range(0,100) for y in range(0,100) for z in range(1,100)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:37:17.893985",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "10",
+                "code": "def mf(A,x,y,z):\r\n  f =  (220 != y + 2*x + z) or (A < 6*x) or (A < y) or (A < 2*z)\r\n  return f\r\n\r\ns = []\r\nfor A in range(1,1000):\r\n  if all([mf(A,x,y,z)==1 for x in range(0,100) for y in range(0,100) for z in range(1,100)]):\r\n    print(A)\r\n    break",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:37:25.507346",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "10",
+                "code": "def mf(A,x,y,z):\r\n  f =  (220 != y + 2*x + z) or (A < 6*x) or (A < y) or (A < 2*z)\r\n  return f\r\n\r\ns = []\r\nfor A in range(0,100):\r\n  if all([mf(A,x,y,z)==1 for x in range(0,50) for y in range(0,50) for z in range(0,50)]):\r\n    s += [A]\r\nprint(max(s))",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:40:03.503783",
+                "ip": "192.168.137.110"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12",
+                "code": "a = set()\r\nb = {2, 4, 6, 8, 10, 12}\r\nc = {3, 6, 9, 12, 15}\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    B = x in b\r\n    C = x in c\r\n    return B <= ((C and (not A)) <= (not B))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:11:08.983379",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1,3,4,9,11,13,15,17,19,21}\r\nq = {3,6,9,12,15,18,21,24,27,30}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return ( P <= A) or ((not A) <= (not Q))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:13:41.253896",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1,3,4,9,11,13,15,17,19,21}\r\nq = {3,6,9,12,15,18,21,24,27,30}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (P <= A) or ((not A) <= (not Q))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T11:14:29.944643",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "12.1",
+                "code": "a = set()\r\np = {1,3,4,9,11,13,15,17,19,21}\r\nq = {3,6,9,12,15,18,21,24,27,30}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (P <= A) or ((not A) <= (not Q))\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T11:15:29.790447",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "13",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12}\r\nq = {3, 6, 9, 12, 15}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not P) or ((not Q) <= A)\r\nr = 1\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nfor i in a:\r\n    r = r*i\r\nprint(r)",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:07:12.479901",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(a)",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:09:43.367965",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\n        print(a)",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:10:00.798076",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:10:16.523338",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(sum(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:10:48.523879",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set()\r\np = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\nq = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\ndef f(x): \r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A <= P) and (Q <= (not A))\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:11:16.116238",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\n    Q = x in {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\n    return (A <= P) and (Q <= (not A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(a, len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:11:27.216528",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14",
+                "code": "a = set(range(1000))\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\n    Q = x in {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\n    return (A <= P) and (Q <= (not A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:11:34.110698",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "14.2",
+                "code": "a = set(range(1000))\r\n\r\n\r\ndef f(x):\r\n    A = x in a\r\n    P = x in {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}\r\n    Q = x in {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}\r\n    return  (A <= P) or ((not Q) <= (not A)) \r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.remove(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:12:52.583367",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "15",
+                "code": "from itertools import *\r\nbits = [''.join(i) for i in product('01', repeat=8)]\r\na = set()\r\np = {i for i in bits if i[:2] == '11'}\r\nq = {i for i in bits if i[-1] == '0'}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (not A) <= ((not P) and (not Q))\r\n\r\n\r\nfor x in bits:\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:15:12.803736",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "a = set()\r\np = {i for i in range(25,51)}\r\nq = {i for i in range(54,76)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (Q <= ((P == Q) or ((not P) <= A)))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:20:58.627816",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "a = set()\r\np = {i for i in range(25,51)}\r\nq = {i for i in range(54,76)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:22:25.103633",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "a = set()\r\np = {i for i in range(25,51)}\r\nq = {i for i in range(54,76)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:29:10.410787",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "16",
+                "code": "a = set()\r\np = {i for i in range(25,50)}\r\nq = {i for i in range(54,75)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return Q <= ((P == Q) or ((not P) <= A))\r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "✅",
+                "timestamp": "2024-11-25T12:31:07.006393",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "a = set()\r\np = {i for i in range(25,37)}\r\nq = {i for i in range(32,50)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A and (not Q)) <= (P or Q) \r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:34:56.271897",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "a = set()\r\np = {i for i in range(25,37)}\r\nq = {i for i in range(32,50)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A and (not Q)) <= (P or Q) \r\n\r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\n        print(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:35:46.738143",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "a = set()\r\np = {i for i in range(25,37)}\r\nq = {i for i in range(32,50)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A and (not Q)) <= (P or Q) \r\n\r\ns = []\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\n        s += a\r\nprint(len(s))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:36:27.140866",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№15",
+                "task_id": "17",
+                "code": "a = set()\r\np = {i for i in range(25,37)}\r\nq = {i for i in range(32,50)}\r\ndef f(x):\r\n    A = x in a\r\n    P = x in p\r\n    Q = x in q\r\n    return (A and (not Q)) <= (P or Q) \r\n\r\nfor x in range(1000):\r\n    if f(x) == 0:\r\n        a.add(x)\r\nprint(len(a))",
+                "result": "❌",
+                "timestamp": "2024-11-25T12:36:57.548398",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'220.128.112.142/{mask}', 0)\r\n  print(net, net.netmask)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:08:55.823231",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n  #net = ip_network(f'220.128.112.142/{mask}', 0)\r\n  #print(net, net.netmask)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:09:49.261297",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n  #net = ip_network(f'111.81.208.27/{mask}', 0)\r\n  #print(net, net.netmask)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:13:24.607159",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'148.195.140.28/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [111,81,208,27])\r\nprint(a.count('1'))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:20:23.644308",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'148.195.140.28/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(a.count('1'))",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:21:15.731431",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'241.185.253.57/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(a.count('0'))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:26:32.241264",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'241.185.253.57/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(a.count('0'))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:27:38.480673",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'241.185.253.57/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(a.count('1'))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:28:51.740776",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'241.185.253.57/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(a.count('0'))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:29:30.526138",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "5",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'241.185.253.57/{mask}', 0)\r\n  #print(net, net.netmask)\r\na = '.'.join(f'{x:>08b}' for x in [255,255,252,0])\r\nprint(32-23)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:30:53.484409",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "from ipaddress import *\r\na = []\r\nfor mask in range(33):\r\n  net = ip_network(f'76.155.48.2/{mask}', 0)\r\n  a += [net]\r\nprint(len(a))\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:34:59.721070",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "6",
+                "code": "print(11)\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:36:25.322605",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "7",
+                "code": "#from ipaddress import *\r\n#for mask in range(33):\r\n  #net = ip_network(f'112.117.107.70/{mask}', 0)\r\n  #net2 = ip_network(f'112.117.121.80/{mask}', 0)\r\n  #if net==net2:\r\n    #print(net, net.netmask)\r\nprint(224)",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:39:48.776304",
+                "ip": "192.168.137.108"
+            }
+        ],
+        "ip": [
+            "192.168.137.114",
+            "192.168.137.110"
+        ]
+    },
+    "Tatwole": {
+        "tasks": {
+            "1 №15": "✅",
+            "2 №15": "✅",
+            "3 №15": "❌",
+            "4 №15": "✅",
+            "2 №13": "✅",
+            "3 №13": "✅",
+            "4 №13": "❌"
+        },
+        "history": [
+            {
+                "topic": "№15",
+                "task_id": "1",
+                "code": "def mb (a,x):\r\n  b = (a%9==0) and ((280%x==0)<=((a%x!=0)<=(730%x!=0)))\r\n  return b\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([mb(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T11:23:08.769386",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№15",
+                "task_id": "2",
+                "code": "def nm (a,x):\r\n  b = ((x%34==0) and (x%51!=0))<=((x%a!=0) or (x%51==0))\r\n  return b\r\n\r\n\r\nfor a in range(1,1000):\r\n  if all([nm(a,x)==1 for x in range(1,1000)]):\r\n    print(a)\r\n    break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:19:02.379345",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№15",
+                "task_id": "3",
+                "code": "def nm(a,x):\r\n  f = (x&41==0)<=((x&119!=0)<=(x&a!=0))\r\n  return f\r\n\r\nfor a in range(1,1000):\r\n  if all([nm(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break\r\n",
+                "result": "❌",
+                "timestamp": "2024-11-21T12:35:24.435368",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№15",
+                "task_id": "4",
+                "code": "def nm(a,x):\r\n  f = (x&41==0)<=((x&119!=0)<=(x&a!=0))\r\n  return f\r\n\r\nfor a in range(1,1000):\r\n  if all([nm(a,x)==1 for x in range(1,100000)]):\r\n    print(a)\r\n    break\r\n",
+                "result": "✅",
+                "timestamp": "2024-11-21T12:35:44.885281",
+                "ip": "192.168.137.108"
+            },
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "print(\"224\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:26:53.152594",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "print(\"192\")",
+                "result": "✅",
+                "timestamp": "2024-11-28T12:29:12.204684",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"128\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:47:15.024214",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"0\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:48:00.676651",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"Hello World\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:48:19.026897",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"Hello World\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:48:26.510417",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print(\"1\")",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:53:18.947389",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:53:37.265649",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('invalid')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:55:56.420164",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('2')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:56:06.543002",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('3')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:56:18.430795",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('4')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:56:29.108843",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('5')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:56:40.856086",
+                "ip": "192.168.137.109"
+            },
+            {
+                "topic": "№13",
+                "task_id": "4",
+                "code": "print('.'.join(f'{x:>08b}' for x in [148,195,140,28]))\r\nprint('.'.join(f'{x:>08b}' for x in [148,195,140,0]))\r\nprint('Hello World')",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:57:35.990011",
+                "ip": "192.168.137.109"
+            }
+        ],
+        "ip": [
+            "192.168.137.108"
+        ]
+    },
+    "1234": {
+        "tasks": {
+            "2 №13": "❌",
+            "3 №13": "❌"
+        },
+        "history": [
+            {
+                "topic": "№13",
+                "task_id": "2",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'220.128.112.142/{mask}', 0)\r\n  print(net, net.netmask)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:27:33.794308",
+                "ip": "192.168.137.114"
+            },
+            {
+                "topic": "№13",
+                "task_id": "3",
+                "code": "from ipaddress import *\r\nfor mask in range(33):\r\n  net = ip_network(f'111.81.208.27/{mask}', 0)\r\n  print(net, net.netmask)",
+                "result": "❌",
+                "timestamp": "2024-11-28T12:29:18.935143",
+                "ip": "192.168.137.114"
+            }
+        ],
+        "ip": [
+            "192.168.137.114"
+        ]
+    },
+    "Alice": {
+        "tasks": {
+            "2 №2": "❌"
+        },
+        "history": [
+            {
+                "topic": "№2",
+                "task_id": "2",
+                "code": "print(1)",
+                "result": "❌",
+                "timestamp": "2024-11-28T22:37:51.193464",
                 "ip": "127.0.0.1"
             }
         ],

@@ -6,6 +6,8 @@ from datetime import datetime
 import time
 import nbformat
 from nbconvert import HTMLExporter
+from werkzeug.utils import secure_filename
+import argparse
 
 app = Flask(__name__)
 last_request_time = {}
@@ -16,6 +18,7 @@ RESULTS_FILE = "results.json"
 FILES_FOLDER = "files"
 INFO_DIRECTORY = "infofiles"
 CONRESULTS_FILE = "conresults.json"
+NO_CON = False
 
 
 # Загрузка конфигурации задач
@@ -161,7 +164,6 @@ def index():
         submit_action = request.form.get("submit_action")
         user_ip = request.remote_addr
         current_time = time.time()
-        print(request.form)
 
         if selected_topic and selected_topic in topics:
             topic_tasks = topics[selected_topic]
@@ -393,6 +395,8 @@ def info():
         return f"<h1>Ошибка при обработке файлов: {str(e)}</h1>"
 
 
+
+
 @app.route("/info/<filename>", methods=["GET"])
 def render_info_file(filename):
     try:
@@ -405,6 +409,13 @@ def render_info_file(filename):
         # Читаем содержимое файла
         with open(filepath, "r", encoding="utf-8") as file:
             notebook = nbformat.read(file, as_version=4)
+
+            # Удаляем код в ячейках, содержащих "display(HTML(html_code))"
+            for cell in notebook['cells']:
+                if cell['cell_type'] == 'code':
+                    if "display(HTML(html_code))" in cell.get('source', ''):
+                        # Оставляем только вывод ячейки
+                        cell['source'] = ""
 
         # Конвертируем в HTML
         html_exporter = HTMLExporter()
@@ -434,11 +445,14 @@ def render_info_file(filename):
 
 @app.route("/con", methods=["GET", "POST"])
 def con():
+    if NO_CON:
+        return
     config = load_config()
     tasks = config["contask"]
     result_message = None
     execution_output = None
     task_description = None
+    task_img = None
     name = None
     task_id = None
     code = None
@@ -458,16 +472,19 @@ def con():
         else:
             task = tasks[task_id]
             task_description = task["description"]
+            if "image" in task:
+                task_img = task["image"]
+
 
             if not code or submit_action != 'submit_code':
-                return render_con_page(tasks, result_message, execution_output, task_description, name)
+                return render_con_page(tasks, result_message, execution_output, task_description, task_img,  name)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
                 time_since_last_request = current_time - last_request_time[user_ip]
                 if time_since_last_request < 5:
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    return render_con_page(tasks, result_message, execution_output, task_description, name)
+                    return render_con_page(tasks, result_message, execution_output, task_description, task_img,  name)
 
 
 
@@ -502,7 +519,7 @@ def con():
 
                 save_conresults(results)
 
-    return render_con_page(tasks, result_message, execution_output, task_description, name)
+    return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
 
 
 @app.route("/conres", methods=["GET"])
@@ -560,7 +577,7 @@ def conresult():
     """, latest_submissions=latest_submissions)
 
 
-def render_con_page(tasks, result_message, execution_output, task_description, name):
+def render_con_page(tasks, result_message, execution_output, task_description,task_img, name):
     """Функция для рендера страницы самостоятельных заданий"""
     return render_template_string("""
     <!doctype html>
@@ -587,6 +604,9 @@ def render_con_page(tasks, result_message, execution_output, task_description, n
             {% if task_description %}
             <h3>Условие задачи:</h3>
             <p>{{ task_description }}</p>
+            {% if task_img %}
+            <p><img src="{{ url_for('static', filename=task_img) }}" alt="task_img"></p>
+            {% endif %}
             {% endif %}
 
             <label>Введите ваш код:</label><br>
@@ -609,13 +629,31 @@ def render_con_page(tasks, result_message, execution_output, task_description, n
     </body>
     </html>
     """, tasks=tasks, result_message=result_message, execution_output=execution_output,
-                                  task_description=task_description, name=name)
+                                  task_description=task_description, task_img=task_img, name=name)
 
 
 if __name__ == "__main__":
     while True:
+        parser = argparse.ArgumentParser(description="Flask server with CLI flag")
+        parser.add_argument(
+            "-nocon",
+            action="store_true",  # Указывает, что флаг является логическим
+            help="Set NO_CON to True"
+        )
+        args = parser.parse_args()
+        NO_CON = args.nocon
+
         try:
             app.run(host="0.0.0.0", port=5000)
+        except KeyboardInterrupt:
+            print("Программа завершена пользователем (Ctrl+C).")
+            break  # Выход из цикла
+
         except Exception as e:
+            print(e)
             print(f"Ошибка сервера: {e}. Перезапуск через 2 секунд...")
             time.sleep(2)
+
+        except KeyboardInterrupt:
+            print("Программа завершена пользователем (Ctrl+C).")
+            break  # Выход из цикла

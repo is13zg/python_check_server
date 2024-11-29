@@ -88,12 +88,14 @@ def execute_code(user_code):
         return {"error": str(e)}
 
 
+
+
 # Главная страница
 @app.route("/", methods=["GET", "POST"])
 def index():
     config = load_config()
     topics = config["tasks"]
-    names = list(map(lambda x: x.lower().strip(), config["names"]))
+    names = config["names"]
     topic_tasks = None
     result_message = None
     execution_output = None
@@ -109,7 +111,7 @@ def index():
         abort(403)
 
     if request.method == "POST":
-        name = request.form.get("name")
+        name = request.form.get("name").capitalize().strip()
         selected_topic = request.form.get("topic")
         selected_task = request.form.get("task")
         code = request.form.get("code")
@@ -136,7 +138,7 @@ def index():
                                        name=name,
                                        selected_topic=selected_topic,
                                        selected_task=selected_task)
-            if name.lower().strip() not in names:
+            if name not in names:
                 result_message = "Введите свое имя, пример: Вася"
                 return render_template("index.html",
                                        topics=topics,
@@ -207,12 +209,24 @@ def index():
                            selected_task=selected_task)
 
 
+# Кастомный фильтр для форматирования даты
+@app.template_filter('format_datetime')
+def format_datetime(value):
+    try:
+        dt = datetime.fromisoformat(value)
+        return dt.strftime("%d.%m %H:%M")
+    except ValueError:
+        return value
+
 @app.route("/res", methods=["GET"])
 def results():
     if not is_local_request():
         abort(403)  # Доступ запрещён
 
     results = load_results()
+    for student, data in results.items():
+        data["history"].sort(key=lambda x: x["timestamp"], reverse=True)
+
     return render_template("results.html", results=results)
 
 
@@ -303,7 +317,7 @@ def con():
         abort(403)
     config = load_config()
     tasks = config["contask"]
-    names = list(map(lambda x: x.lower().strip(), config["names"]))
+    names = config["names"]
     result_message = None
     execution_output = None
     task_description = None
@@ -315,7 +329,7 @@ def con():
     global last_request_time
 
     if request.method == "POST":
-        name = request.form.get("name")
+        name = request.form.get("name").capitalize().strip()
         task_id = request.form.get("task")
         code = request.form.get("code")
         submit_action = request.form.get("submit_action")

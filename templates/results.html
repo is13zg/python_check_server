@@ -3,24 +3,24 @@
 {% block content %}
 <h1>Результаты учеников</h1>
 <table border="1">
-    <tr>
-        {% for name, data in results.items() %}
-        <td><a href="/res/{{ name }}">{{ name }}</a></td>
-        {% endfor %}
-    </tr>
-    <tr>
-        {% for name, data in results.items() %}
-        <td>
-            {% for task_id, status in data['tasks'].items() %}
-            Задача {{ task_id }}: {{ status }}<br>
+    <thead>
+        <tr>
+            {% for name, data in results.items() %}
+            <td><a href="/res/{{ name }}">{{ name }}</a></td>
             {% endfor %}
-        </td>
-        {% endfor %}
-    </tr>
-    <tr>
-        {% for name, data in results.items() %}
-        <td>{{ data['ip'] }}</td>
-        {% endfor %}
-    </tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for name, data in results.items() %}
+             <td style="vertical-align: top;">
+
+                {% for entry in data.history %}
+                {{ entry.result }} {{ entry.task_id }} {{ entry.topic }} {{ entry.timestamp | format_datetime }}<br>
+                {% endfor %}
+            </td>
+            {% endfor %}
+        </tr>
+    </tbody>
 </table>
 {% endblock %}

@@ -18,7 +18,7 @@
         <td>{{ row['ip'] }}</td>
         <td><pre>{{ row['code'] }}</pre></td>
         <td>{{ row['output'] }}</td>
-        <td>{{ row['timestamp'] }}</td>
+        <td>{{ row['timestamp'] | format_datetime }}</td>
     </tr>
     {% endfor %}
 </table>

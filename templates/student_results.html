@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Результаты ученика {{ name }}</h1>
+{% if student_data %}
+<h2>Итоги:</h2>
+<ul>
+    {% for task_id, status in student_data['tasks'].items() %}
+    <li>Задача {{ task_id }}: {{ status }}</li>
+    {% endfor %}
+</ul>
+<h2>История попыток:</h2>
+<table border="1">
+    <tr>
+        <th>Номер задачи</th>
+        <th>Код</th>
+        <th>Результат</th>
+        <th>Время</th>
+        <th>IP</th>
+    </tr>
+    {% for attempt in sorted_history %}
+    <tr>
+        <td>{{ attempt['topic'] }} {{ attempt['task_id'] }}</td>
+        <td><pre>{{ attempt['code'] }}</pre></td>
+        <td>{{ attempt['result'] }}</td>
+        <td>{{ attempt['timestamp'] }}</td>
+        <td>{{ attempt['ip'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Ученик с таким именем не найден.</p>
+{% endif %}
+{% endblock %}

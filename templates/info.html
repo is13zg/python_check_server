@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Доступные файлы info</h1>
+<ul>
+    {% for file in info_files %}
+    <li><a href="/info/{{ file }}">{{ file }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

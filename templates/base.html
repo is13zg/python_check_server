@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title or "Сайт для задач" }}</title>
+</head>
+<body>
+    <!-- Подключение меню -->
+    {% include 'menu.html' %}
+    
+    <!-- Блок для контента -->
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

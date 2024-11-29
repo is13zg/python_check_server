@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string, send_from_directory, abort
+from flask import Flask, request, send_from_directory, abort, render_template, jsonify
 import json
 import subprocess
 import os
@@ -6,8 +6,6 @@ from datetime import datetime
 import time
 import nbformat
 from nbconvert import HTMLExporter
-import signal
-import threading
 
 app = Flask(__name__)
 last_request_time = {}
@@ -58,19 +56,17 @@ def is_local_request():
     user_ip = request.remote_addr
     return user_ip in ["127.0.0.1", "::1"]
 
+
 def is_con_time():
     global CON_TIME
     return CON_TIME
+
 
 def is_work_time():
     global WORK_TIME
     return WORK_TIME
 
 
-def stop_flask():
-    """Функция для остановки Flask-сервера."""
-    print("Остановка сервера Flask...")
-    os.kill(os.getpid(), signal.SIGINT)
 # Выполнение пользовательского кода
 def execute_code(user_code):
     try:
@@ -92,74 +88,12 @@ def execute_code(user_code):
         return {"error": str(e)}
 
 
-def render_page2(topics, result_message, execution_output, task_description, name, selected_topic, selected_task):
-    """Функция для рендера страницы"""
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Python Code Checker</title>
-    </head>
-    <body>
-        <h1>Python Code Checker</h1>
-        <form method="POST" action="/">
-            <label>Имя ученика:</label><br>
-            <input type="text" name="name" value="{{ name or '' }}" required><br><br>
-
-            <label>Выберите тему:</label><br>
-            <select name="topic" required onchange="this.form.submit()">
-                <option value="" disabled selected>Выберите тему</option>
-                {% for topic in topics.keys() %}
-                    <option value="{{ topic }}" {% if topic == selected_topic %}selected{% endif %}>{{ topic }}</option>
-                {% endfor %}
-            </select><br><br>
-
-            {% if selected_topic %}
-            <label>Выберите задачу:</label><br>
-            <select name="task" required onchange="this.form.submit()">
-                <option value="" disabled selected>Выберите задачу</option>
-                {% for task_id, task in topics[selected_topic].items() %}
-                    <option value="{{ task_id }}" {% if task_id == selected_task %}selected{% endif %}>Задача {{ task_id }}</option>
-                {% endfor %}
-            </select><br><br>
-            {% endif %}
-
-            {% if task_description %}
-            <h3>Условие задачи:</h3>
-            <p>{{ task_description }}</p>
-            {% endif %}
-
-            <label>Введите ваш код:</label><br>
-            <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
-            
-            <!-- Скрытое поле для проверки, была ли нажата кнопка -->
-            <input type="hidden" name="submit_action" value="">
-            
-            <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'" >Отправить</button>
-        </form>
-
-        {% if result_message %}
-        <h2>Результат:</h2>
-        <p>{{ result_message }}</p>
-        {% if execution_output %}
-        <h3>Вывод программы:</h3>
-        <pre>{{ execution_output }}</pre>
-        {% endif %}
-        {% endif %}
-    </body>
-    </html>
-    """, topics=topics, result_message=result_message, execution_output=execution_output,
-                                  task_description=task_description, name=name,
-                                  selected_topic=selected_topic, selected_task=selected_task)
-
-
 # Главная страница
 @app.route("/", methods=["GET", "POST"])
 def index():
     config = load_config()
     topics = config["tasks"]
-    names = config["names"]
+    names = list(map(lambda x: x.lower().strip(), config["names"]))
     topic_tasks = None
     result_message = None
     execution_output = None
@@ -173,9 +107,6 @@ def index():
 
     if not is_work_time() and not is_local_request():
         abort(403)
-
-
-
 
     if request.method == "POST":
         name = request.form.get("name")
@@ -197,20 +128,38 @@ def index():
             expected_output = task["expected_output"]
 
             if not code or submit_action != 'submit_code':
-                return render_page2(topics, result_message, execution_output, task_description, name, selected_topic,
-                                    selected_task)
-            if name not in names:
+                return render_template("index.html",
+                                       topics=topics,
+                                       result_message=result_message,
+                                       execution_output=execution_output,
+                                       task_description=task_description,
+                                       name=name,
+                                       selected_topic=selected_topic,
+                                       selected_task=selected_task)
+            if name.lower().strip() not in names:
                 result_message = "Введите свое имя, пример: Вася"
-                return render_page2(topics, result_message, execution_output, task_description, name, selected_topic,
-                                    selected_task)
+                return render_template("index.html",
+                                       topics=topics,
+                                       result_message=result_message,
+                                       execution_output=execution_output,
+                                       task_description=task_description,
+                                       name=name,
+                                       selected_topic=selected_topic,
+                                       selected_task=selected_task)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
                 time_since_last_request = current_time - last_request_time[user_ip]
                 if time_since_last_request < 5:
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    return render_page2(topics, result_message, execution_output, task_description, name,
-                                        selected_topic, selected_task)
+                    return render_template("index.html",
+                                           topics=topics,
+                                           result_message=result_message,
+                                           execution_output=execution_output,
+                                           task_description=task_description,
+                                           name=name,
+                                           selected_topic=selected_topic,
+                                           selected_task=selected_task)
 
             # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
@@ -248,7 +197,14 @@ def index():
 
                 save_results(results)
 
-    return render_page2(topics, result_message, execution_output, task_description, name, selected_topic, selected_task)
+    return render_template("index.html",
+                           topics=topics,
+                           result_message=result_message,
+                           execution_output=execution_output,
+                           task_description=task_description,
+                           name=name,
+                           selected_topic=selected_topic,
+                           selected_task=selected_task)
 
 
 @app.route("/res", methods=["GET"])
@@ -257,84 +213,7 @@ def results():
         abort(403)  # Доступ запрещён
 
     results = load_results()
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Результаты</title>
-    </head>
-    <body>
-        <h1>Результаты учеников</h1>
-        <table border="1">
-            <tr>
-                <th>Имя</th>
-                <th>Задачи</th>
-                <th>ip</th>
-
-            </tr>
-            {% for name, data in results.items() %}
-                <tr>
-                    <td><a href="/res/{{ name }}">{{ name }}</a></td>
-                    <td>
-                        {% for task_id, status in data['tasks'].items() %}
-                            Задача {{ task_id }}: {{ status }}<br>
-                        {% endfor %}
-                    </td>
-                     <td>{{ data['ip'] }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-        <a href="/">Вернуться на главную</a>
-    </body>
-    </html>
-    """, results=results)
-
-
-@app.route("/res2", methods=["GET"])
-def results2():
-    if not is_local_request():
-        abort(403)  # Доступ запрещён
-
-    results = load_results()
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Результаты</title>
-    </head>
-    <body>
-        <h1>Результаты учеников</h1>
-        <table border="1">
-            <tr>
-                {% for name, data in results.items() %}
-                    <td>
-                        <a href="/res/{{ name }}">{{ name }}</a>
-                    </td>
-                {% endfor %}
-            </tr>
-            <tr>
-                {% for name, data in results.items() %}
-                    <td>
-                        {% for task_id, status in data['tasks'].items() %}
-                            Зад. {{ task_id }}: {{ status }}<br>
-                        {% endfor %}
-                    </td>
-                {% endfor %}
-            </tr>
-            <tr>
-                {% for name, data in results.items() %}
-                    <td>
-                        {{ data['ip'] }}
-                    </td>
-                {% endfor %}
-            </tr>
-        </table>
-        <a href="/">Вернуться на главную</a>
-    </body>
-    </html>
-    """, results=results)
+    return render_template("results.html", results=results)
 
 
 # Страница со списком файлов
@@ -344,87 +223,20 @@ def list_files():
         os.makedirs(FILES_FOLDER)
 
     files = os.listdir(FILES_FOLDER)
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Список файлов</title>
-    </head>
-    <body>
-        <h1>Список файлов</h1>
-        <ul>
-            {% for file in files %}
-                <li><a href="/download/{{ file }}">{{ file }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="/">Вернуться на главную</a>
-    </body>
-    </html>
-    """, files=files)
+    return render_template("list_files.html", files=files)
 
 
 @app.route("/res/<name>", methods=["GET"])
 def student_results(name):
     results = load_results()
     if name not in results:
-        return render_template_string("""
-        <!doctype html>
-        <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Результаты ученика</title>
-        </head>
-        <body>
-            <h1>Результаты ученика {{ name }}</h1>
-            <p>Ученик с таким именем не найден.</p>
-            <a href="/res">Вернуться к общим результатам</a>
-        </body>
-        </html>
-        """, name=name)
+        return render_template("student_results.html", name=name, student_data=None)
 
     student_data = results[name]
     # Сортируем историю по времени в обратном порядке
     sorted_history = sorted(student_data["history"], key=lambda x: x["timestamp"], reverse=True)
 
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Результаты ученика</title>
-    </head>
-    <body>
-        <h1>Результаты ученика {{ name }}</h1>
-        <h2>Итоги:</h2>
-        <ul>
-            {% for task_id, status in student_data['tasks'].items() %}
-                <li>Задача {{ task_id }}: {{ status }}</li>
-            {% endfor %}
-        </ul>
-        <h2>История попыток:</h2>
-        <table border="1">
-            <tr>
-                <th>Номер задачи</th>
-                <th>Код</th>
-                <th>Результат</th>
-                <th>Время</th>
-                <th>ip</th>
-            </tr>
-            {% for attempt in sorted_history  %}
-                <tr>
-                    <td>{{ attempt['topic']+" "+ attempt['task_id'] }}</td>
-                    <td><pre>{{ attempt['code'] }}</pre></td>
-                    <td>{{ attempt['result'] }}</td>
-                    <td>{{ attempt['timestamp'] }}</td>
-                    <td>{{ attempt['ip'] }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-        <a href="/res">Вернуться к общим результатам</a>
-    </body>
-    </html>
-    """, name=name, student_data=student_data, sorted_history=sorted_history)
+    return render_template("student_results.html", name=name, student_data=student_data, sorted_history=sorted_history)
 
 
 # Скачивание файлов
@@ -445,24 +257,7 @@ def info():
             return "<h1>Файлы info*.ipynb не найдены.</h1>"
 
         # Рендерим список доступных файлов
-        return render_template_string("""
-        <!doctype html>
-        <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Доступные файлы</title>
-        </head>
-        <body>
-            <h1>Доступные файлы info</h1>
-            <ul>
-                {% for file in info_files %}
-                    <li><a href="/info/{{ file }}">{{ file }}</a></li>
-                {% endfor %}
-            </ul>
-            <a href="/">Вернуться на главную</a>
-        </body>
-        </html>
-        """, info_files=info_files)
+        return render_template("info.html", info_files=info_files)
 
     except Exception as e:
         return f"<h1>Ошибка при обработке файлов: {str(e)}</h1>"
@@ -496,21 +291,7 @@ def render_info_file(filename):
         html_body, _ = html_exporter.from_notebook_node(notebook)
 
         # Рендерим HTML
-        return render_template_string("""
-        <!doctype html>
-        <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Просмотр {{ filename }}</title>
-        </head>
-        <body>
-            <h1>Просмотр файла {{ filename }}</h1>
-            <div>{{ html_body|safe }}</div>
-            <a href="/info">Вернуться к списку файлов</a>
-            <a href="/">Вернуться на главную</a>
-        </body>
-        </html>
-        """, filename=filename, html_body=html_body)
+        return render_template("info_view.html", filename=filename, html_body=html_body)
 
     except Exception as e:
         return f"<h1>Ошибка при обработке файла {filename}: {str(e)}</h1>"
@@ -522,7 +303,7 @@ def con():
         abort(403)
     config = load_config()
     tasks = config["contask"]
-    names = config["names"]
+    names = list(map(lambda x: x.lower().strip(), config["names"]))
     result_message = None
     execution_output = None
     task_description = None
@@ -550,18 +331,24 @@ def con():
                 task_img = task["image"]
 
             if not code or submit_action != 'submit_code':
-                return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
+                return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                       execution_output=execution_output, task_description=task_description,
+                                       task_img=task_img, name=name)
 
-            if name not in names:
+            if name.lower().strip() not in names:
                 result_message = "Введите свое имя, пример: Вася"
-                return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
+                return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                       execution_output=execution_output, task_description=task_description,
+                                       task_img=task_img, name=name)
 
             # Проверка времени последнего запроса
             if user_ip in last_request_time:
                 time_since_last_request = current_time - last_request_time[user_ip]
                 if time_since_last_request < 5:
                     result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
+                    return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                           execution_output=execution_output, task_description=task_description,
+                                           task_img=task_img, name=name)
 
                 # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
@@ -594,7 +381,9 @@ def con():
 
                 save_conresults(results)
 
-    return render_con_page(tasks, result_message, execution_output, task_description, task_img, name)
+    return render_template("contest.html", tasks=tasks, result_message=result_message,
+                           execution_output=execution_output, task_description=task_description,
+                           task_img=task_img, name=name)
 
 
 @app.route("/conres", methods=["GET"])
@@ -634,140 +423,30 @@ def conresult():
         for task_id in sorted_task_ids
     }
 
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Результаты самостоятельных задач</title>
-    </head>
-    <body>
-        <h1>Результаты самостоятельных задач</h1>
-        {% for task_id, rows in sorted_latest_submissions.items() %}
-            <h2>Задача {{ task_id }}</h2>
-            <table border="1">
-                <tr>
-                    <th>Имя пользователя</th>
-                    <th>IP-адрес</th>
-                    <th>Код</th>
-                    <th>Вывод</th>
-                    <th>Время отправки</th>
-                </tr>
-                {% for row in rows %}
-                <tr>
-                    <td>{{ row['name'] }}</td>
-                    <td>{{ row['ip'] }}</td>
-                    <td><pre>{{ row['code'] }}</pre></td>
-                    <td>{{ row['output'] }}</td>
-                    <td>{{ row['timestamp'] }}</td>
-                </tr>
-                {% endfor %}
-            </table>
-        {% endfor %}
-        <a href="/">Вернуться на главную</a>
-    </body>
-    </html>
-    """, sorted_latest_submissions=sorted_latest_submissions)
+    return render_template("con_results.html", sorted_latest_submissions=sorted_latest_submissions)
 
 
-def render_con_page(tasks, result_message, execution_output, task_description, task_img, name):
-    """Функция для рендера страницы самостоятельных заданий"""
-    return render_template_string("""
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Самостоятельные задачи</title>
-    </head>
-    <body>
-        <h1>Самостоятельные задачи</h1>
-        <form method="POST" action="/con">
-            <label>Имя ученика:</label><br>
-            <input type="text" name="name" value="{{ name or '' }}" required><br><br>
-
-            <label>Выберите номер задачи:</label><br>
-            
-            <select name="task" required onchange="this.form.submit()">
-                <option value="" disabled selected>Выберите задачу</option>
-                {% for task_id, task in tasks.items() %}
-                    <option value="{{ task_id }}" {% if task_id == request.form.get('task') %}selected{% endif %}>Задача {{ task_id }}</option>
-                {% endfor %}
-            </select><br><br>
-
-            {% if task_description %}
-            <h3>Условие задачи:</h3>
-            <p>{{ task_description }}</p>
-            {% if task_img %}
-            <p><img src="{{ url_for('static', filename=task_img) }}" alt="task_img"></p>
-            {% endif %}
-            {% endif %}
-
-            <label>Введите ваш код:</label><br>
-            <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
-
-             <!-- Скрытое поле для проверки, была ли нажата кнопка -->
-            <input type="hidden" name="submit_action" value="">
-            
-            <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'" >Отправить</button>
-        </form>
-
-        {% if result_message %}
-        <h2>Результат:</h2>
-        <p>{{ result_message }}</p>
-        {% if execution_output %}
-        <h3>Вывод программы:</h3>
-        <pre>{{ execution_output }}</pre>
-        {% endif %}
-        {% endif %}
-    </body>
-    </html>
-    """, tasks=tasks, result_message=result_message, execution_output=execution_output,
-                                  task_description=task_description, task_img=task_img, name=name)
+@app.route('/upc', methods=['GET'])
+def update_config():
+    if not is_local_request():
+        abort(403)
+    global WORK_TIME, CON_TIME
+    # Проверяем и обновляем переменные напрямую
+    if 'work' in request.args:
+        WORK_TIME = request.args.get('work').lower() in ['true', '1', 'yes']
+    if 'con' in request.args:
+        CON_TIME = request.args.get('con').lower() in ['true', '1', 'yes']
+    return jsonify({
+        "status": "success",
+        "work": WORK_TIME,
+        "con": CON_TIME
+    })
 
 
-def flask_thread():
-    """Функция для запуска Flask-сервера в отдельном потоке."""
+if __name__ == "__main__":
     while True:
         try:
             app.run(host="0.0.0.0", port=5000)
-
         except Exception as e:
-            print(e)
             print(f"Ошибка сервера: {e}. Перезапуск через 2 секунд...")
             time.sleep(2)
-
-
-def command_listener():
-    """Функция для обработки пользовательских команд."""
-    global WORK_TIME, CON_TIME
-    print("Введите команды: 'all', 'work', 'con'. Для выхода используйте 'exit'.")
-    while True:
-        command = input("Введите команду: ").strip().lower()
-        if command == "all":
-            WORK_TIME = True
-            CON_TIME = True
-            print("Режим ALL: WORK_TIME = True, CON_TIME = True")
-        elif command == "work":
-            WORK_TIME = True
-            CON_TIME = False
-            print("Режим WORK: WORK_TIME = True, CON_TIME = False")
-        elif command == "con":
-            WORK_TIME = False
-            CON_TIME = True
-            print("Режим CON: WORK_TIME = False, CON_TIME = True")
-        elif command == "exit":
-            print("Выход из программы...")
-            stop_flask()
-            break
-        else:
-            print("Неизвестная команда. Попробуйте 'all', 'work', 'con' или 'exit'.")
-
-if __name__ == "__main__":
-    # Запуск Flask-сервера в отдельном потоке
-    server_thread = threading.Thread(target=flask_thread, daemon=True)
-    server_thread.start()
-
-    # Запуск обработки команд в основном потоке
-    command_listener()
-    print("Режим ALL: WORK_TIME = True, CON_TIME = True")
-

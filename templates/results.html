@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Результаты учеников</h1>
+<table border="1">
+    <tr>
+        {% for name, data in results.items() %}
+        <td><a href="/res/{{ name }}">{{ name }}</a></td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for name, data in results.items() %}
+        <td>
+            {% for task_id, status in data['tasks'].items() %}
+            Задача {{ task_id }}: {{ status }}<br>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for name, data in results.items() %}
+        <td>{{ data['ip'] }}</td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

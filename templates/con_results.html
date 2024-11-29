@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Результаты самостоятельных задач</h1>
+{% for task_id, rows in sorted_latest_submissions.items() %}
+<h2>Задача {{ task_id }}</h2>
+<table border="1">
+    <tr>
+        <th>Имя</th>
+        <th>IP</th>
+        <th>Код</th>
+        <th>Вывод</th>
+        <th>Время</th>
+    </tr>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row['name'] }}</td>
+        <td>{{ row['ip'] }}</td>
+        <td><pre>{{ row['code'] }}</pre></td>
+        <td>{{ row['output'] }}</td>
+        <td>{{ row['timestamp'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Самостоятельные задачи</h1>
+<form method="POST" action="/con">
+    <label>Имя ученика:</label><br>
+    <input type="text" name="name" value="{{ name or '' }}" required><br><br>
+    <label>Выберите номер задачи:</label><br>
+    <select name="task" required onchange="this.form.submit()">
+        <option value="" disabled selected>Выберите задачу</option>
+        {% for task_id, task in tasks.items() %}
+        <option value="{{ task_id }}" {% if task_id == request.form.get('task') %}selected{% endif %}>Задача {{ task_id }}</option>
+        {% endfor %}
+    </select><br><br>
+    {% if task_description %}
+    <h3>Условие задачи:</h3>
+    <p>{{ task_description }}</p>
+    {% if task_img %}
+    <img src="{{ url_for('static', filename=task_img) }}" alt="task_img"><br>
+    {% endif %}
+    {% endif %}
+    <label>Введите ваш код:</label><br>
+    <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% if result_message %}
+<h2>Результат:</h2>
+<p>{{ result_message }}</p>
+{% if execution_output %}
+<h3>Вывод программы:</h3>
+<pre>{{ execution_output }}</pre>
+{% endif %}
+{% endif %}
+{% endblock %}

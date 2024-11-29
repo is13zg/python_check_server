@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Python Code Checker</h1>
+<form method="POST" action="/">
+    <label>Имя ученика:</label><br>
+    <input type="text" name="name" value="{{ name or '' }}" required><br><br>
+
+    <label>Выберите тему:</label><br>
+    <select name="topic" required onchange="this.form.submit()">
+        <option value="" disabled selected>Выберите тему</option>
+        {% for topic in topics.keys() %}
+            <option value="{{ topic }}" {% if topic == selected_topic %}selected{% endif %}>{{ topic }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    {% if selected_topic %}
+    <label>Выберите задачу:</label><br>
+    <select name="task" required onchange="this.form.submit()">
+        <option value="" disabled selected>Выберите задачу</option>
+        {% for task_id, task in topics[selected_topic].items() %}
+            <option value="{{ task_id }}" {% if task_id == selected_task %}selected{% endif %}>Задача {{ task_id }}</option>
+        {% endfor %}
+    </select><br><br>
+    {% endif %}
+
+    {% if task_description %}
+    <h3>Условие задачи:</h3>
+    <p>{{ task_description }}</p>
+    {% endif %}
+
+    <label>Введите ваш код:</label><br>
+    <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
+
+    <input type="hidden" name="submit_action" value="">
+    <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'">Отправить</button>
+</form>
+
+{% if result_message %}
+<h2>Результат:</h2>
+<p>{{ result_message }}</p>
+{% if execution_output %}
+<h3>Вывод программы:</h3>
+<pre>{{ execution_output }}</pre>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -127,6 +127,7 @@ def index():
         else:
             task = topic_tasks[selected_task]
             task_description = task["description"]
+
             expected_output = task["expected_output"]
 
             if not code or submit_action != 'submit_code':
@@ -328,6 +329,8 @@ def con():
     submit_action = None
     global last_request_time
 
+
+
     if request.method == "POST":
         name = request.form.get("name").capitalize().strip()
         task_id = request.form.get("task")
@@ -336,64 +339,70 @@ def con():
         user_ip = request.remote_addr
         current_time = time.time()
 
+
         if task_id not in tasks:
             result_message = "Неверный номер задачи."
-        else:
-            task = tasks[task_id]
-            task_description = task["description"]
-            if "image" in task:
-                task_img = task["image"]
+            return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                   execution_output=execution_output, task_description=task_description,
+                                   task_img=task_img, name=name)
 
-            if not code or submit_action != 'submit_code':
-                return render_template("contest.html", tasks=tasks, result_message=result_message,
-                                       execution_output=execution_output, task_description=task_description,
-                                       task_img=task_img, name=name)
+        task = tasks[task_id]
+        task_description = task["description"]
+        if "image" in task:
+            task_img = task["image"]
 
-            if name.lower().strip() not in names:
-                result_message = "Введите свое имя, пример: Вася"
-                return render_template("contest.html", tasks=tasks, result_message=result_message,
-                                       execution_output=execution_output, task_description=task_description,
-                                       task_img=task_img, name=name)
+
+        if not code or submit_action != 'submit_code':
+            return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                   execution_output=execution_output, task_description=task_description,
+                                   task_img=task_img, name=name)
+
+
+        if name not in names:
+            result_message = "Введите свое имя, пример: Вася"
+            return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                   execution_output=execution_output, task_description=task_description,
+                                   task_img=task_img, name=name)
 
             # Проверка времени последнего запроса
-            if user_ip in last_request_time:
-                time_since_last_request = current_time - last_request_time[user_ip]
-                if time_since_last_request < 5:
-                    result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
-                    return render_template("contest.html", tasks=tasks, result_message=result_message,
-                                           execution_output=execution_output, task_description=task_description,
-                                           task_img=task_img, name=name)
+        if user_ip in last_request_time:
+            time_since_last_request = current_time - last_request_time[user_ip]
+            if time_since_last_request < 5:
+                result_message = f"Слишком частые запросы. Подождите {round(5 - time_since_last_request, 2)} секунд."
+                return render_template("contest.html", tasks=tasks, result_message=result_message,
+                                       execution_output=execution_output, task_description=task_description,
+                                       task_img=task_img, name=name)
 
-                # Обновляем время последнего запроса
-            last_request_time[user_ip] = current_time
+            # Обновляем время последнего запроса
+        last_request_time[user_ip] = current_time
 
-            # Выполняем код
-            execution_result = execute_code(code)
-            if "error" in execution_result:
-                result_message = execution_result["error"]
-                execution_output = execution_result["error"]
-            elif execution_result["stderr"]:
-                result_message = "Ошибка в коде."
-                execution_output = execution_result["stderr"]
-            else:
-                result_message = "Задача отправлена!"
-                execution_output = execution_result["stdout"]
+        # Выполняем код
+        execution_result = execute_code(code)
+        if "error" in execution_result:
+            result_message = execution_result["error"]
+            execution_output = execution_result["error"]
+        elif execution_result["stderr"]:
+            result_message = "Ошибка в коде."
+            execution_output = execution_result["stderr"]
+        else:
+            result_message = "Задача отправлена!"
+            execution_output = execution_result["stdout"]
 
-                # Сохраняем результат в JSON
-                results = load_conresults()
-                if task_id not in results:
-                    results[task_id] = []
+            # Сохраняем результат в JSON
+            results = load_conresults()
+            if task_id not in results:
+                results[task_id] = []
 
-                # Обновляем данные (сохраняем последнее решение)
-                results[task_id].append({
-                    "name": name,
-                    "ip": user_ip,
-                    "code": code,
-                    "output": execution_output,
-                    "timestamp": datetime.now().isoformat()
-                })
+            # Обновляем данные (сохраняем последнее решение)
+            results[task_id].append({
+                "name": name,
+                "ip": user_ip,
+                "code": code,
+                "output": execution_output,
+                "timestamp": datetime.now().isoformat()
+            })
 
-                save_conresults(results)
+            save_conresults(results)
 
     return render_template("contest.html", tasks=tasks, result_message=result_message,
                            execution_output=execution_output, task_description=task_description,

@@ -14,14 +14,15 @@
     </select><br><br>
     {% if task_description %}
     <h3>Условие задачи:</h3>
-    <p>{{ task_description }}</p>
+    <p>{{ task_description.replace('\n', '<br>')|safe }}</p>
     {% if task_img %}
     <img src="{{ url_for('static', filename=task_img) }}" alt="task_img"><br>
     {% endif %}
     {% endif %}
     <label>Введите ваш код:</label><br>
     <textarea name="code" rows="10" cols="50" required>{{ request.form.get('code') or '' }}</textarea><br><br>
-    <button type="submit">Отправить</button>
+    <input type="hidden" name="submit_action" value="">
+    <button type="submit" onclick="document.getElementsByName('submit_action')[0].value = 'submit_code'">Отправить</button>
 </form>
 {% if result_message %}
 <h2>Результат:</h2>

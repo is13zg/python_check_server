@@ -20,6 +20,9 @@ CONRESULTS_FILE = "conresults.json"
 WORK_TIME = True
 CON_TIME = False
 
+# проверка строки на число
+def is_only_numbers_and_spaces(s: str) -> bool:
+    return all(c.isdigit() or c.isspace() for c in s)
 
 # Загрузка конфигурации задач
 def load_config():
@@ -167,7 +170,10 @@ def index():
             # Обновляем время последнего запроса
             last_request_time[user_ip] = current_time
 
-            execution_result = execute_code(code)
+            if is_only_numbers_and_spaces(code):
+                execution_result = {'stdout': f'{code}\n', 'stderr': '', 'success': True}
+            else:
+                execution_result = execute_code(code)
             if "error" in execution_result:
                 result_message = execution_result["error"]
             elif execution_result["stderr"]:
@@ -376,8 +382,11 @@ def con():
             # Обновляем время последнего запроса
         last_request_time[user_ip] = current_time
 
-        # Выполняем код
-        execution_result = execute_code(code)
+        if is_only_numbers_and_spaces(code):
+            execution_result = {'stdout': f'{code}\n', 'stderr': '', 'success': True}
+        else:
+            execution_result = execute_code(code)
+
         if "error" in execution_result:
             result_message = execution_result["error"]
             execution_output = execution_result["error"]
